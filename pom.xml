@@ -15,7 +15,7 @@
         <org.springframework.version>4.3.8.RELEASE</org.springframework.version>
         <cucmber.version>4.2.0</cucmber.version>
 
-        <cucmber.parallel.plugin>5.0.0</cucmber.parallel.plugin>
+        <cucumber.parallel.plugin>5.0.0</cucumber.parallel.plugin>
         <build.helper.maven.plugin>1.4</build.helper.maven.plugin>
         <maven.surefire.plugin>2.20.1</maven.surefire.plugin>
         <maven.compiler.plugin>3.2</maven.compiler.plugin>
@@ -96,7 +96,7 @@
                     <plugin>
                         <groupId>com.github.temyers</groupId>
                         <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-                        <version>${cucmber.parallel.plugin}</version>
+                        <version>${cucumber.parallel.plugin}</version>
                         <executions>
                             <execution>
                                 <id>generateRunners</id>
