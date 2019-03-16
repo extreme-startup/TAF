@@ -5,5 +5,4 @@ install:
 - ./mvnw clean install
 script:
 - ./mvnw -P generate generate-test-sources
-
-- ./mvnw -P run integration-test -Dselenide.remote=http://35.234.68.105:4444/wd/hub
+- ./mvnw -P run integration-test -Dselenide.remote=http://35.234.68.105:4444/wd/hub -Dmaven.test.failure.ignore=false
