@@ -1,0 +1,5 @@
+language: java
+before_install:
+  - chmod +x mvnw
+script:
+  - ./mvnw test -Dselenide.remote=http://35.234.68.105:4444/wd/hub

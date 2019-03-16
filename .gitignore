@@ -1,0 +1,9 @@
+target/
+build/reports/tests
+allure-results/
+/.allure
+/.idea
+*.apk
+*.iml
+*.app/*
+configuration.properties
