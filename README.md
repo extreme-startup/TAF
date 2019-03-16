@@ -1,3 +1,8 @@
+## RUN TESTS
+
+ To generate test runners execute mvnw -P generate generate-test-sources
+ To run generated runners execute mvnw -P run integration-test
+
 ## REPORTING:
 
  In order to generate Cluecumber report use such command after test run:
