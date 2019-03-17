@@ -1,14 +1,24 @@
 language: java
 addons:
   sonarcloud:
-    organization: "extreme-startup_taf"
+    organization: extreme-startup_taf
 before_install:
 - chmod +x mvnw
 install:
-- ./mvnw clean install
+- "./mvnw clean install"
 script:
-- ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
-- ./mvnw -P generate generate-test-sources
-- ./mvnw -P run integration-test -Dselenide.remote=http://35.234.68.105:4444/wd/hub
+- "./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar"
+- "./mvnw -P generate generate-test-sources"
+- "./mvnw -P run integration-test -Dselenide.remote=http://35.234.68.105:4444/wd/hub"
 after_script:
-- ./mvnw -P generate-report post-integration-test
+- "./mvnw -P generate-report post-integration-test"
+deploy:
+  provider: s3
+  access_key_id: AKIAI4UMNQ2FRQPFHNXA
+  secret_access_key:
+    secure: HUO75HsM7E4jI/vDtIngWSjVYZlnq6ZsqarE+kNsGcMUp4SJ92ORoyT23QHYxB0LzUYodzsHQ2OIbwPogFpnmeq2RPK79Wnd+68yVD7fzgn0bUMBMQkwPedVAXr8G88UcIwyehKCimTO+2RcW0+j9tbPPF7blFjVYrsTomQdJgAPojPNu6ePC83Hzj3wscwZZr0GZacyjd21xxBdJirPjmWwPsL4EfJyLqNeMuDV3Lr29q1ahgn4b3fgi5opgwGH9i2oyfhJC3pPW4Oy62yb2q4T46O2iXzbXop9zWSNj+gcNpKgNoFnkKSBybVE1ucr8JpBXStmnCKNptbCvhgprqMdEMYFbenSUg2cK2v+x/vhRk/vpkhuVr5UR8SQzNysq1v82uhZ+bk4n8WyZ99gkalWEaoYmCcWHCzOt5BjzZkpBr02h5ZvlwYu7b05lRzA/zIIwiJ9tN+YLFN3PDVheForJzN2jfkYFk9+iz4UW33//CcImzODvOfl8BDksiXagyh1mpHuH6chYFEjkRpK/tMXalJkyQzldimnQizb7NJ1BXJC2Y4rEYek47oVq4vb8dtr65Ahoof39IjhNyAsfRq7WFz9/zBUZJ6xAr2XrK3SvQXZLuBmbcoEYxcl6d5YcEsQk0dUyB0eN6HCU3T0KJ0rLEFbT7+E9s5XtMOI+vg=
+  bucket: qtaf
+  local-dir: target/cluecumber-report
+  acl: public_read
+  on:
+    repo: extreme-startup/TAF
