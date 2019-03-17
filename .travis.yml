@@ -12,3 +12,10 @@ script:
 - ./mvnw -P run integration-test -Dselenide.remote=http://35.234.68.105:4444/wd/hub
 after_script:
 - ./mvnw -P generate-report post-integration-test
+
+deploy:
+  provider: s3
+  access_key_id: "AKIAI4UMNQ2FRQPFHNXA"
+  secret_access_key: "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"
+  bucket: "qtaf"
+  skip_cleanup: true
