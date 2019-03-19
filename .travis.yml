@@ -5,10 +5,18 @@ addons:
 before_install:
 - chmod +x mvnw
 install:
-- "./mvnw clean install"
+- ./mvnw clean install
 script:
-- "./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar"
-- "./mvnw -P generate generate-test-sources"
-- "./mvnw -P run integration-test -Dselenide.remote=http://35.234.68.105:4444/wd/hub"
+- ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+- ./mvnw -P generate generate-test-sources
+- ./mvnw -P run integration-test -Dselenide.remote=http://35.234.68.105:4444/wd/hub
 after_script:
-- "./mvnw -P generate-report post-integration-test"
+- ./mvnw -P generate-report post-integration-test
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  local-dir: target/cluecumber-report
+  on:
+    branch: master
