@@ -8,4 +8,5 @@ public interface HomePage extends Page {
     SelenideElement getLogoLink();
 
     void navigateViaLogoLink();
+
 }
