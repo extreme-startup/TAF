@@ -1,6 +1,6 @@
 package automation.examples.business;
 
-import automation.examples.site.pages.home.StoreFinderPage;
+import automation.examples.site.pages.storefinder.StoreFinderPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,6 +2,8 @@ package automation.examples.business;
 
 
 import automation.examples.framework.spring.AppConfig;
+import automation.examples.storage.Storage;
+import automation.examples.storage.models.Credentials;
 import com.codeborne.selenide.Configuration;
 import cucumber.api.java.Before;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +20,17 @@ public class Hooks {
     @Value("${webdriver.timeout}")
     private long timeout;
 
+    @Value("${admin.login}")
+    private String adminLogin;
+
+    @Value("${admin.password}")
+    private String adminPassword;
+
     @Autowired
     private Environment env;
+
+    @Autowired
+    private Storage storage;
 
     @Before(order = 0)
     public void setupBrowser() {
@@ -37,9 +48,14 @@ public class Hooks {
         Configuration.baseUrl = baseURL;
     }
 
-    @Before()
+    @Before(order = 1)
     public void maximizeBrowser() {
         Configuration.startMaximized = true;
+    }
+
+    @Before(value = "@role=admin", order = 2)
+    public void setAdminCredentials() {
+        storage.storeCredentials(new Credentials(adminLogin, adminPassword));
     }
 
 }
