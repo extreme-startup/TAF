@@ -2,6 +2,8 @@ language: java
 addons:
   sonarcloud:
     organization: extreme-startup-taf
+    token:
+      secure: QXXhNVfLvPnah78k6sGF9vbzQgARpCS85le4bkrt5uGPmFZ6OVDU3JqoZr8qA+uVs77GtJXOAljzidBUKYJYfkIPssiF2INORMePo1O1esx1kEfp29Pao0+j3M7XvDxaUYW20r6Vnh4l1Pq1xNLvVmRo2qui+Lfcoiz9Dw1mL63iVMAHayxRYEx/sr9/ZIcJ39skq+lsWCW5Npcqq/Wcd8ZbIatvD4LMDl4LArQMlNHR8e/GQius1rXPyaIdQAdqzI7OzT5ggoZw1MRc7+lk/S0KALtPUPpP7iC6QDOs+9g3gasfAefhkG7wFEUeIERj61fU9vhkPpwVlMDZLBx0SrdYHNUyk+kCgx/jnB+cXYfwxPQqvZIxOnPlzfLjAMccSf0XjoKsFVBzdeEUbrY626JaBcDWhzFVTMpSit7k0eGo3fGUF31OpAJLczgl1M1P84+MnF/vqRcjSnqDzg0IuKKmuoGI5BVjg+2T0IHaS+9QxFKmT3gyaJ7nIbt5BwpwauNrTJSGg8675auMHzMChaKWQL6JFBb0Gmhnn8DaDTNvsCx0UDEcB/tcXo5rP4Ko7MH48Kwz1/BEclDqGreR86TKFRLJPMQTbiUngjtMTPw+w00UnbKfycY97rwo5IyMaIpeqaJRQZqlq5XYrvaU58zXOC/S52nQdTn6yBSlRsI=
 before_install:
 - chmod +x mvnw
 install:
@@ -21,4 +23,3 @@ deploy:
   local-dir: target/cluecumber-report
   on:
     branch: master
-
