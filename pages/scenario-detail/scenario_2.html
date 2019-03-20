@@ -22,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
   <meta name="description" content="Cluecumber Report Plugin version 1.7.2 - Scenario Details"> 
   <meta name="author" content="Cluecumber Report Plugin version 1.7.2"> 
-  <title>Scenario Details - 2019/03/20 15:21:30</title> 
+  <title>Scenario Details - 2019/03/20 16:27:59</title> 
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"> 
   <link rel="stylesheet" href="css/cluecumber.css" type="text/css"> 
   <link rel="stylesheet" href="css/cluecumber_custom.css"> 
@@ -76,11 +76,11 @@
     "datasets": [
       {
         "data": [
-          27,
+          1,
           0,
           0,
           0,
-          2473,
+          319,
           0,
           0
         ],
@@ -103,7 +103,7 @@
           0,
           0,
           0,
-          3071,
+          2623,
           0
         ],
         "backgroundColor": [
@@ -224,14 +224,14 @@
      <li class="nav-item"> <a class="nav-link" href="pages/scenario-sequence.html">Scenario Sequence</a> </li> 
      <li class="nav-item"> <a class="nav-link" href="index.html">All Scenarios</a> </li> 
     </ul> 
-    <span class="text-light">2019/03/20 15:21:30</span> 
+    <span class="text-light">2019/03/20 16:27:59</span> 
    </div> 
   </nav> 
   <main role="main" class="container"> 
    <div class="cluecumber-template"> 
     <div class="pb-2 mt-4 mb-2 border-bottom"> 
-     <h5><a href="pages/feature-scenarios/feature_0.html">Home Page</a></h5> 
-     <h3>How to work with Fragments</h3> 
+     <h5><a href="pages/feature-scenarios/feature_1.html">Home Page</a></h5> 
+     <h3>7.2.1 Verify Home Page Button - Guest</h3> 
     </div> 
     <div class="row"> 
      <div class="col-sm-8  h-auto" data-cluecumber-item="card"> 
@@ -255,7 +255,7 @@
         <ul class="list-group list-group-flush"> 
          <li class="list-group-item">3 Step(s)</li> 
          <li class="list-group-item"> 1 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 1 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 1 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> </li> 
-         <li class="list-group-item">Duration: 0m 05s 572ms</li> 
+         <li class="list-group-item">Duration: 0m 02s 943ms</li> 
          <li class="list-group-item"> </li> 
         </ul> 
         <button class="btn btn-outline-secondary btn-block collapsed" type="button" data-toggle="collapse" aria-expanded="true" data-cluecumber-item="before-after-hooks-button" data-target=".scenarioHook">Before/After Hooks </button> 
@@ -279,7 +279,7 @@
            <i>Hooks.setupBrowser()</i> 
           </div> 
           <div class="col-2 text-left small">
-            0m 00s 027ms 
+            0m 00s 001ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
@@ -345,7 +345,7 @@
            <span data-toggle="tooltip" title="StoreFinderPageStepDefinition.storeFinderPageIsOpen()"> Given Guest is on Store Finder Page </span> 
           </div> 
           <div class="col-2 text-left small">
-            0m 02s 473ms 
+            0m 00s 319ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
@@ -356,22 +356,22 @@
            2.
           </div> 
           <div class="col-8 text-left"> 
-           <span data-toggle="tooltip" title="StoreFinderPageStepDefinition.fillSomeFragment(String)"> When fill some fragment: <strong>London</strong> </span> 
+           <span data-toggle="tooltip" title="HomePageStepDefinitions.navigatesViaHomePageButton()"> When Guest navigates to Home Page via Home Page Button </span> 
           </div> 
           <div class="col-2 text-left small">
-            0m 03s 071ms 
+            0m 02s 623ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 
           </div> 
           <div class="row w-100 p-3 m-0 scenarioErrorMessage"> 
            <div class="w-100 text-left border border-danger"> 
-            <pre class="text-danger small p-2">Element not found {input.address_finder__field}
-Expected: enabled
-Screenshot: file:/home/travis/build/extreme-startup/TAF/build/reports/tests/1553095278998.0.png
-Page source: file:/home/travis/build/extreme-startup/TAF/build/reports/tests/1553095278998.0.html
+            <pre class="text-danger small p-2">Element not found {.logo}
+Expected: visible
+Screenshot: file:/home/travis/build/extreme-startup/TAF/build/reports/tests/1553099268533.1.png
+Page source: file:/home/travis/build/extreme-startup/TAF/build/reports/tests/1553099268533.1.html
 Timeout: 2 s.
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input.address_finder__field"}
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".logo"}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:37)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:100)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:65)
@@ -382,22 +382,21 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {"
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:99)
 	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:65)
 	at com.sun.proxy.$Proxy26.shouldBe(Unknown Source)
-	at automation.examples.site.components.search.impl.SearchStoreFragmentImpl.findStores(SearchStoreFragmentImpl.java:15)
-	at automation.examples.business.StoreFinderPageStepDefinition.fillSomeFragment(StoreFinderPageStepDefinition.java:21)
-	at ✽.fill some fragment: London(/home/travis/build/extreme-startup/TAF/src/test/resources/features/HomePage.feature:10)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input.address_finder__field"}
+	at automation.examples.site.pages.home.HomePageImpl.navigateViaLogoLink(HomePageImpl.java:26)
+	at automation.examples.business.HomePageStepDefinitions.navigatesViaHomePageButton(HomePageStepDefinitions.java:24)
+	at ✽.Guest navigates to Home Page via Home Page Button(/home/travis/build/extreme-startup/TAF/src/test/resources/features/HomePage.feature:5)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".logo"}
   (Session info: chrome=72.0.3626.121)
   (Driver info: chromedriver=2.46.628388 (4a34a70827ac54148e092aafb70504c4ea7ae926),platform=Linux 4.15.0-1028-gcp x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: <a href="https://www.seleniumhq.org/exceptions/no_such_element.html" target="_blank">https://www.seleniumhq.org/exceptions/no_such_element.html</a>
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'travis-job-f950c270-e72b-4ae0-98a3-06773e02861c', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-101-generic', java.version: '1.8.0_151'
+System info: host: 'travis-job-0a0b3ae8-2ed7-46a4-8b2c-4d8276af9487', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-101-generic', java.version: '1.8.0_151'
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628388 (4a34a70827ac54..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:33595}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true, webdriver.remote.sessionid: f4dd61aa3abb61703b6dd798b90...}
-Session ID: f4dd61aa3abb61703b6dd798b90bfcbc
-*** Element info: {Using=css selector, value=input.address_finder__field}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628388 (4a34a70827ac54..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:35841}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true, webdriver.remote.sessionid: d8d9a2bb198edcd31608e0e00d7...}
+Session ID: d8d9a2bb198edcd31608e0e00d7cd7d4
+*** Element info: {Using=css selector, value=.logo}
+	at sun.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
@@ -421,8 +420,8 @@ Session ID: f4dd61aa3abb61703b6dd798b90bfcbc
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:99)
 	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:65)
 	at com.sun.proxy.$Proxy26.shouldBe(Unknown Source)
-	at automation.examples.site.components.search.impl.SearchStoreFragmentImpl.findStores(SearchStoreFragmentImpl.java:15)
-	at automation.examples.business.StoreFinderPageStepDefinition.fillSomeFragment(StoreFinderPageStepDefinition.java:21)
+	at automation.examples.site.pages.home.HomePageImpl.navigateViaLogoLink(HomePageImpl.java:26)
+	at automation.examples.business.HomePageStepDefinitions.navigatesViaHomePageButton(HomePageStepDefinitions.java:24)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -490,7 +489,7 @@ Session ID: f4dd61aa3abb61703b6dd798b90bfcbc
   </main> 
   <footer class="footer navbar-dark bg-dark"> 
    <div class="container-fluid"> 
-    <span>Cluecumber Report Plugin version 1.7.2 - 2019/03/20 15:21:30.</span> 
+    <span>Cluecumber Report Plugin version 1.7.2 - 2019/03/20 16:27:59.</span> 
    </div> 
   </footer>   
  </body>

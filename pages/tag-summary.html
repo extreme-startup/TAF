@@ -36,7 +36,7 @@ limitations under the License.
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
   <meta name="description" content="Cluecumber Report Plugin version 1.7.2 - Tag Summary"> 
   <meta name="author" content="Cluecumber Report Plugin version 1.7.2"> 
-  <title>Tag Summary - 2019/03/20 15:21:31</title> 
+  <title>Tag Summary - 2019/03/20 16:28:00</title> 
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"> 
   <link rel="stylesheet" href="css/cluecumber.css" type="text/css"> 
   <link rel="stylesheet" href="css/cluecumber_custom.css"> 
@@ -78,21 +78,42 @@ limitations under the License.
         var ctx = canvas.getContext("2d");
         var chart = new Chart(ctx, eval({
   "data": {
-    "labels": [],
+    "labels": [
+      "@WIP",
+      "@role\u003dadmin"
+    ],
     "datasets": [
       {
-        "data": [],
-        "backgroundColor": [],
+        "data": [
+          0,
+          0
+        ],
+        "backgroundColor": [
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)"
+        ],
         "label": "passed"
       },
       {
-        "data": [],
-        "backgroundColor": [],
+        "data": [
+          1,
+          1
+        ],
+        "backgroundColor": [
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)"
+        ],
         "label": "failed"
       },
       {
-        "data": [],
-        "backgroundColor": [],
+        "data": [
+          0,
+          0
+        ],
+        "backgroundColor": [
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)"
+        ],
         "label": "skipped"
       }
     ]
@@ -108,7 +129,7 @@ limitations under the License.
           "stacked": true,
           "scaleLabel": {
             "display": true,
-            "labelString": "0 Tag(s)"
+            "labelString": "2 Tag(s)"
           },
           "stepSize": 0.0
         }
@@ -124,7 +145,7 @@ limitations under the License.
             "display": true,
             "labelString": "Number of Scenarios"
           },
-          "stepSize": 0.0
+          "stepSize": 1.0
         }
       ]
     }
@@ -178,7 +199,7 @@ limitations under the License.
      <li class="nav-item"> <a class="nav-link" href="pages/scenario-sequence.html">Scenario Sequence</a> </li> 
      <li class="nav-item"> <a class="nav-link" href="index.html">All Scenarios</a> </li> 
     </ul> 
-    <span class="text-light">2019/03/20 15:21:31</span> 
+    <span class="text-light">2019/03/20 16:28:00</span> 
    </div> 
   </nav> 
   <main role="main" class="container"> 
@@ -206,8 +227,8 @@ limitations under the License.
        </div> 
        <div class="card-body"> 
         <ul class="list-group list-group-flush" data-cluecumber-item="tag-summary"> 
-         <li class="list-group-item">0 Tag(s) in<br> 0 Tagged Scenario(s) </li> 
-         <li class="list-group-item"> 0 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 0 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 0 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> </li> 
+         <li class="list-group-item">2 Tag(s) in<br> 1 Tagged Scenario(s) </li> 
+         <li class="list-group-item"> 0 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 1 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 0 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> </li> 
         </ul> 
        </div> 
       </div> 
@@ -231,6 +252,20 @@ limitations under the License.
           </tr> 
          </thead> 
          <tbody> 
+          <tr> 
+           <td class="text-left"><a href="pages/tag-scenarios/tag_WIP.html">@WIP</a></td> 
+           <td class="text-right"><strong>1</strong></td> 
+           <td class="text-right">0</td> 
+           <td class="text-right">1</td> 
+           <td class="text-right">0</td> 
+          </tr> 
+          <tr> 
+           <td class="text-left"><a href="pages/tag-scenarios/tag_role=admin.html">@role=admin</a></td> 
+           <td class="text-right"><strong>1</strong></td> 
+           <td class="text-right">0</td> 
+           <td class="text-right">1</td> 
+           <td class="text-right">0</td> 
+          </tr> 
          </tbody> 
         </table> 
        </div> 
@@ -241,7 +276,7 @@ limitations under the License.
   </main> 
   <footer class="footer navbar-dark bg-dark"> 
    <div class="container-fluid"> 
-    <span>Cluecumber Report Plugin version 1.7.2 - 2019/03/20 15:21:31.</span> 
+    <span>Cluecumber Report Plugin version 1.7.2 - 2019/03/20 16:28:00.</span> 
    </div> 
   </footer>   
  </body>
