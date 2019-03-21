@@ -8,9 +8,12 @@ addons:
       HkNGFx23J6bTwtWn+VQCHNqgs04KT9W4jA4waDexCEPqoy/tHyC16ZVUnf7u2MwM/UkDgIxBGOewJIs1nO9DsXH1vIqKS24t8pSRPY3oswCtzqbdBLQCqkSoD1RPtb2IYfK+ZiW2hKHzp3Rxwf3MhH8BNLvIEnBflH84P/SPkLWw="
 before_install:
 - chmod +x mvnw
+
+env:
+  - TEST=test
 install:
 - "./mvnw clean install"
-
+- echo $TEST
 jobs:
     include:
     - stage: Sonar analyse
@@ -22,8 +25,6 @@ jobs:
     - stage: Run tests
       script:
       - "./mvnw -P run integration-test -Dselenide.remote=http://35.234.68.105:4444/wd/hub"
-    - stage: Generate report
-      script:
       - "./mvnw -P generate-report post-integration-test"
     - stage: deploy
       name: "Deploy report to https://extreme-startup.github.io/TAF/"
