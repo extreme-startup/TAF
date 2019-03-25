@@ -2,7 +2,6 @@ Feature: Competition
 
   Background:
     Given logged in User
-    And User has navigated to Landing Page
 
   @type:sunny @role=admin @WIP
   Scenario: Create competition
