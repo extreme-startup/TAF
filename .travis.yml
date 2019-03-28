@@ -13,7 +13,6 @@ env:
   - TEST=test
 install:
 - "./mvnw clean install"
-- echo $TEST
 jobs:
     include:
     - stage: Sonar analyse
