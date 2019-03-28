@@ -1,5 +1,6 @@
 package automation.examples.site.pages.landing;
 
+import automation.examples.site.components.competition.CompetitionFragment;
 import automation.examples.site.components.login.LoginFragment;
 import com.codeborne.selenide.SelenideElement;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ public class LandingPageImpl implements LandingPage {
     @Autowired
     private LoginFragment loginFragment;
 
+    @Autowired
+    private CompetitionFragment competitionFragment;
 
     @Override
     public void openPage() {
@@ -24,6 +27,9 @@ public class LandingPageImpl implements LandingPage {
     public LoginFragment getLoginFragment() {
         return loginFragment;
     }
+
+    @Override
+    public CompetitionFragment getCompetitionFragment() { return competitionFragment; }
 
     @Override
     public boolean isProfileLinkEnabled() {
