@@ -17,7 +17,7 @@ jobs:
       - "./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar"
     - stage: Run tests
       script:
-      - "./mvnw -P generate generate-test-sources"
+      - "./mvnw -P regression,generate generate-test-sources"
       - "./mvnw -P run integration-test -Dselenide.remote=http://35.234.68.105:4444/wd/hub"
       - "./mvnw -P generate-report post-integration-test"
       deploy:

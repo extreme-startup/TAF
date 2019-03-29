@@ -210,6 +210,21 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <id>smoke</id>
+            <properties>
+                <cucumber.options>--tags @smoke --tags ~@WIP</cucumber.options>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>regression</id>
+            <properties>
+                <cucumber.options>--tags @regression --tags ~@WIP</cucumber.options>
+            </properties>
+        </profile>
+
     </profiles>
 
     <build>

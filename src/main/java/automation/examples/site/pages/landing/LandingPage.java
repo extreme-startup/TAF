@@ -11,4 +11,7 @@ public interface LandingPage extends Page {
     CompetitionFragment getCompetitionFragment();
 
     boolean isProfileLinkEnabled();
+
+    String getProfileEmail();
+
 }
