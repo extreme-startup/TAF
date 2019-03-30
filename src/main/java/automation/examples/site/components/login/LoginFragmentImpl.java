@@ -1,31 +1,45 @@
 package automation.examples.site.components.login;
 
-import automation.examples.storage.models.Credentials;
 import com.codeborne.selenide.SelenideElement;
 import org.springframework.stereotype.Component;
 
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selenide.$;
 
 @Component
 public class LoginFragmentImpl implements LoginFragment {
 
     @Override
-    public void login(final Credentials credentials) {
-        getLoginInput().sendKeys(credentials.getLogin());
-        getPasswordInput().sendKeys(credentials.getPassword());
-        getSubmitButton().click();
+    public void provideEmail(final String email) {
+        getLoginInput().sendKeys(email);
+    }
+
+    @Override
+    public void login(final String login) {
+        getLoginInput().sendKeys(login);
+        getSubmitButton().shouldBe(enabled).click();
+    }
+
+    @Override
+    public boolean isLoginHighlighted() {
+        return getLoginInput().getAttribute("class").contains("kfCJBy");
+    }
+
+    @Override
+    public Boolean isLoginErrorMessageDisplayed() {
+        return getLoginErrorMessage().isDisplayed();
     }
 
     private SelenideElement getLoginInput() {
         return $("input#login");
     }
 
-    private SelenideElement getPasswordInput() {
-        return $("input#password");
-    }
-
     private SelenideElement getSubmitButton() {
         return $("button#submit");
+    }
+
+    private SelenideElement getLoginErrorMessage() {
+        return $("p.ceWzIo");
     }
 
 }

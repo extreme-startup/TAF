@@ -36,6 +36,11 @@ public class LandingPageImpl implements LandingPage {
         return getProfileLink().isEnabled();
     }
 
+    @Override
+    public String getProfileEmail() {
+        return getProfileLink().getAttribute("innerText");
+    }
+
     private SelenideElement getProfileLink() {
         return $("a#profile");
     }
