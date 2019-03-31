@@ -1,4 +1,4 @@
-package api;
+package automation.examples.api;
 
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;

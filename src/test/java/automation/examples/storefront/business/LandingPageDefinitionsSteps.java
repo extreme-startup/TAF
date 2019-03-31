@@ -1,4 +1,4 @@
-package automation.examples.business;
+package automation.examples.storefront.business;
 
 import automation.examples.site.pages.landing.LandingPage;
 import cucumber.api.java.en.Given;

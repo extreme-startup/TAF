@@ -111,7 +111,7 @@
                                     <goal>generateRunners</goal>
                                 </goals>
                                 <configuration>
-                                    <glue>automation.examples.business</glue>
+                                    <glue>automation.examples.storefront.business</glue>
                                     <plugins>
                                         <plugin>
                                             <name>json</name>

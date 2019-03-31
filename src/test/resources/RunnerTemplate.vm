@@ -3,8 +3,8 @@
 package $packageName;
 
 #end##
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import cucumber.automation.examples.api.CucumberOptions;
+import cucumber.automation.examples.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
