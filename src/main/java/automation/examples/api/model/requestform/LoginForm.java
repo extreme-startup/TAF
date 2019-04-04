@@ -1,4 +1,4 @@
-package automation.examples.api.requestform;
+package automation.examples.api.model.requestform;
 
 
 public class LoginForm {
@@ -8,7 +8,7 @@ public class LoginForm {
     public LoginForm() {
     }
 
-    public LoginForm(String email) {
+    public LoginForm(final String email) {
         this.email = email;
     }
 
@@ -16,8 +16,7 @@ public class LoginForm {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
-
 }

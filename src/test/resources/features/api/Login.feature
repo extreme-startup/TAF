@@ -1,6 +1,6 @@
 Feature: Login
 
-  @smoke @run
+  @smoke
   Scenario: User Login
     When Client calls Login service
     Then response status code is 200

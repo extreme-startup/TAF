@@ -1,4 +1,4 @@
-package automation.examples.business;
+package automation.examples.storefront.business;
 
 
 import automation.examples.framework.spring.AppConfig;

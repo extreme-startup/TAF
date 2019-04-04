@@ -1,6 +1,6 @@
-package automation.examples.api.responsedto;
+package automation.examples.api.model.responsedto;
 
-//lombock for get set?
+
 public class UserDTO {
 
     private String id;
@@ -10,7 +10,7 @@ public class UserDTO {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(final String id) {
         this.id = id;
     }
 
@@ -18,7 +18,8 @@ public class UserDTO {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
+
 }
