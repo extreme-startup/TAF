@@ -22,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
   <meta name="description" content="Cluecumber Report Plugin version 1.7.2 - Scenario Details"> 
   <meta name="author" content="Cluecumber Report Plugin version 1.7.2"> 
-  <title>Scenario Details - 2019/04/08 13:58:20</title> 
+  <title>Scenario Details - 2019/04/08 13:58:21</title> 
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"> 
   <link rel="stylesheet" href="css/cluecumber.css" type="text/css"> 
   <link rel="stylesheet" href="css/cluecumber_custom.css"> 
@@ -72,7 +72,8 @@
       "Before 5",
       "Step 1",
       "Step 2",
-      "Step 3"
+      "Step 3",
+      "Step 4"
     ],
     "datasets": [
       {
@@ -84,9 +85,11 @@
           0,
           0,
           0,
+          0,
           0
         ],
         "backgroundColor": [
+          "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
@@ -106,11 +109,13 @@
           0,
           0,
           0,
-          127,
+          135,
+          0,
           0,
           0
         ],
         "backgroundColor": [
+          "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
@@ -132,9 +137,11 @@
           0,
           0,
           0,
+          0,
           0
         ],
         "backgroundColor": [
+          "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
@@ -231,14 +238,14 @@
      <li class="nav-item"> <a class="nav-link" href="pages/scenario-sequence.html">Scenario Sequence</a> </li> 
      <li class="nav-item"> <a class="nav-link" href="index.html">All Scenarios</a> </li> 
     </ul> 
-    <span class="text-light">2019/04/08 13:58:20</span> 
+    <span class="text-light">2019/04/08 13:58:21</span> 
    </div> 
   </nav> 
   <main role="main" class="container"> 
    <div class="cluecumber-template"> 
     <div class="pb-2 mt-4 mb-2 border-bottom"> 
      <h5><a href="pages/feature-scenarios/feature_0.html">Login</a></h5> 
-     <h3>Login</h3> 
+     <h3>Login validation</h3> 
     </div> 
     <div class="row"> 
      <div class="col-sm-8  h-auto" data-cluecumber-item="card"> 
@@ -260,10 +267,10 @@
        </div> 
        <div class="card-body"> 
         <ul class="list-group list-group-flush"> 
-         <li class="list-group-item">3 Step(s)</li> 
-         <li class="list-group-item"> 0 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 3 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 0 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> </li> 
-         <li class="list-group-item">Duration: 0m 00s 128ms</li> 
-         <li class="list-group-item"> <a href="pages/tag-scenarios/tag_smoke.html">@smoke</a>, <a href="pages/tag-scenarios/tag_regression.html">@regression</a>, <a href="pages/tag-scenarios/tag_type:sunny.html">@type:sunny</a> </li> 
+         <li class="list-group-item">4 Step(s)</li> 
+         <li class="list-group-item"> 0 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 4 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 0 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> </li> 
+         <li class="list-group-item">Duration: 0m 00s 137ms</li> 
+         <li class="list-group-item"> <a href="pages/tag-scenarios/tag_regression.html">@regression</a>, <a href="pages/tag-scenarios/tag_type:validation.html">@type:validation</a> </li> 
         </ul> 
         <button class="btn btn-outline-secondary btn-block collapsed" type="button" data-toggle="collapse" aria-expanded="true" data-cluecumber-item="before-after-hooks-button" data-target=".scenarioHook">Before/After Hooks </button> 
        </div> 
@@ -366,7 +373,7 @@
            <span data-toggle="tooltip" title="LandingPageDefinitionsSteps.navigateToLandingPage()"> Given User has navigated to Landing Page </span> 
           </div> 
           <div class="col-2 text-left small">
-            0m 00s 127ms 
+            0m 00s 135ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 
@@ -398,7 +405,7 @@ selenide.baseUrl: https://questionator-app-dev.herokuapp.com/
 	at com.codeborne.selenide.Selenide.open(Selenide.java:39)
 	at automation.examples.site.pages.landing.LandingPageImpl.openPage(LandingPageImpl.java:23)
 	at automation.examples.storefront.business.LandingPageDefinitionsSteps.navigateToLandingPage(LandingPageDefinitionsSteps.java:18)
-	at ✽.User has navigated to Landing Page(/home/travis/build/extreme-startup/TAF/src/test/resources/features/storefront/Login.feature:5)
+	at ✽.User has navigated to Landing Page(/home/travis/build/extreme-startup/TAF/src/test/resources/features/storefront/Login.feature:11)
 Caused by: java.net.ConnectException: Failed to connect to /35.234.68.105:4444
 	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
 	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
@@ -501,7 +508,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
            2.
           </div> 
           <div class="col-8 text-left"> 
-           <span data-toggle="tooltip" title=""> When User logs in </span> 
+           <span data-toggle="tooltip" title=""> When User provides invalid email: invalid@email..com </span> 
           </div> 
           <div class="col-2 text-left small">
             0m 00s 000ms 
@@ -515,7 +522,21 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
            3.
           </div> 
           <div class="col-8 text-left"> 
-           <span data-toggle="tooltip" title=""> Then they are logged in </span> 
+           <span data-toggle="tooltip" title=""> Then login error message is displayed </span> 
+          </div> 
+          <div class="col-2 text-left small">
+            0m 00s 000ms 
+          </div> 
+          <div class="col-1 text-right"> 
+           <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> 
+          </div> 
+         </div> 
+         <div class="row row_skipped"> 
+          <div class="col-1 text-left">
+           4.
+          </div> 
+          <div class="col-8 text-left"> 
+           <span data-toggle="tooltip" title=""> And login field is highlighted </span> 
           </div> 
           <div class="col-2 text-left small">
             0m 00s 000ms 
@@ -532,7 +553,7 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
   </main> 
   <footer class="footer navbar-dark bg-dark"> 
    <div class="container-fluid"> 
-    <span>Cluecumber Report Plugin version 1.7.2 - 2019/04/08 13:58:20.</span> 
+    <span>Cluecumber Report Plugin version 1.7.2 - 2019/04/08 13:58:21.</span> 
    </div> 
   </footer>   
  </body>
