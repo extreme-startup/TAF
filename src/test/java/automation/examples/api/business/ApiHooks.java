@@ -23,8 +23,7 @@ public class ApiHooks {
 
     @Before(order = 0)
     public void setPreconditions() {
-        request = given().contentType(JSON)
-                .baseUri(baseURL);
+        request = given().contentType(JSON).accept(JSON).baseUri(baseURL);
         if (valueOf(apiLogger)) {
             request.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
         }

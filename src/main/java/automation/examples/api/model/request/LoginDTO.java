@@ -1,14 +1,14 @@
-package automation.examples.api.model.requestform;
+package automation.examples.api.model.request;
 
 
-public class LoginForm {
+public class LoginDTO {
 
     private String email;
 
-    public LoginForm() {
+    public LoginDTO() {
     }
 
-    public LoginForm(final String email) {
+    public LoginDTO(final String email) {
         this.email = email;
     }
 

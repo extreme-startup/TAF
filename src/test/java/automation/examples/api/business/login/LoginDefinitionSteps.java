@@ -2,7 +2,7 @@ package automation.examples.api.business.login;
 
 import automation.examples.api.RestAssuredContext;
 import automation.examples.api.resources.Login;
-import automation.examples.api.model.responsedto.UserDTO;
+import automation.examples.api.model.response.UserDTO;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;

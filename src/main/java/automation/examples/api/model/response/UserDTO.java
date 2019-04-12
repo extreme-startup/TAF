@@ -1,4 +1,4 @@
-package automation.examples.api.model.responsedto;
+package automation.examples.api.model.response;
 
 
 public class UserDTO {
