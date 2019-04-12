@@ -22,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
   <meta name="description" content="Cluecumber Report Plugin version 1.7.2 - Scenario Details"> 
   <meta name="author" content="Cluecumber Report Plugin version 1.7.2"> 
-  <title>Scenario Details - 2019/04/12 07:04:48</title> 
+  <title>Scenario Details - 2019/04/12 10:48:03</title> 
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"> 
   <link rel="stylesheet" href="css/cluecumber.css" type="text/css"> 
   <link rel="stylesheet" href="css/cluecumber_custom.css"> 
@@ -78,15 +78,15 @@
     "datasets": [
       {
         "data": [
-          25,
+          30,
           0,
-          15,
-          0,
-          0,
-          27319,
+          23,
           0,
           0,
-          0
+          2917,
+          391,
+          342,
+          243
         ],
         "backgroundColor": [
           "rgba(40, 167, 69, 1.000)",
@@ -238,7 +238,7 @@
      <li class="nav-item"> <a class="nav-link" href="pages/scenario-sequence.html">Scenario Sequence</a> </li> 
      <li class="nav-item"> <a class="nav-link" href="index.html">All Scenarios</a> </li> 
     </ul> 
-    <span class="text-light">2019/04/12 07:04:48</span> 
+    <span class="text-light">2019/04/12 10:48:03</span> 
    </div> 
   </nav> 
   <main role="main" class="container"> 
@@ -268,8 +268,8 @@
        <div class="card-body"> 
         <ul class="list-group list-group-flush"> 
          <li class="list-group-item">4 Step(s)</li> 
-         <li class="list-group-item"> 1 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 3 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 0 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> </li> 
-         <li class="list-group-item">Duration: 0m 27s 361ms</li> 
+         <li class="list-group-item"> 4 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 0 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 0 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> </li> 
+         <li class="list-group-item">Duration: 0m 03s 950ms</li> 
          <li class="list-group-item"> <a href="pages/tag-scenarios/tag_regression.html">@regression</a>, <a href="pages/tag-scenarios/tag_type:validation.html">@type:validation</a> </li> 
         </ul> 
         <button class="btn btn-outline-secondary btn-block collapsed" type="button" data-toggle="collapse" aria-expanded="true" data-cluecumber-item="before-after-hooks-button" data-target=".scenarioHook">Before/After Hooks </button> 
@@ -293,7 +293,7 @@
            <i>Hooks.setupBrowser()</i> 
           </div> 
           <div class="col-2 text-left small">
-            0m 00s 025ms 
+            0m 00s 030ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
@@ -321,7 +321,7 @@
            <i>Hooks.clearCookies()</i> 
           </div> 
           <div class="col-2 text-left small">
-            0m 00s 015ms 
+            0m 00s 023ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
@@ -370,55 +370,55 @@
            1.
           </div> 
           <div class="col-8 text-left"> 
-           <span data-toggle="tooltip" title="LandingPageDefinitionsSteps.navigateToLandingPage()"> Given User has navigated to Landing Page </span> 
+           <span data-toggle="tooltip" title="HomePageStepDefinitions.navigateToHomePage()"> Given User has navigated to Home Page </span> 
           </div> 
           <div class="col-2 text-left small">
-            0m 27s 319ms 
+            0m 02s 917ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
           </div> 
          </div> 
-         <div class="row row_skipped"> 
+         <div class="row row_passed"> 
           <div class="col-1 text-left">
            2.
           </div> 
           <div class="col-8 text-left"> 
-           <span data-toggle="tooltip" title=""> When User provides invalid email: invalid@email </span> 
+           <span data-toggle="tooltip" title="HomePageStepDefinitions.loginWithInvalidEmail(String)"> When User provides invalid email: <strong>invalid@email</strong> </span> 
           </div> 
           <div class="col-2 text-left small">
-            0m 00s 000ms 
+            0m 00s 391ms 
           </div> 
           <div class="col-1 text-right"> 
-           <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> 
+           <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
           </div> 
          </div> 
-         <div class="row row_skipped"> 
+         <div class="row row_passed"> 
           <div class="col-1 text-left">
            3.
           </div> 
           <div class="col-8 text-left"> 
-           <span data-toggle="tooltip" title=""> Then login error message is displayed </span> 
+           <span data-toggle="tooltip" title="HomePageStepDefinitions.verifyLoginErrorMessageIsDisplayed()"> Then login error message is displayed </span> 
           </div> 
           <div class="col-2 text-left small">
-            0m 00s 000ms 
+            0m 00s 342ms 
           </div> 
           <div class="col-1 text-right"> 
-           <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> 
+           <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
           </div> 
          </div> 
-         <div class="row row_skipped"> 
+         <div class="row row_passed"> 
           <div class="col-1 text-left">
            4.
           </div> 
           <div class="col-8 text-left"> 
-           <span data-toggle="tooltip" title=""> And login field is highlighted </span> 
+           <span data-toggle="tooltip" title="HomePageStepDefinitions.verifyLoginFieldIsHighlighted()"> And login field is highlighted </span> 
           </div> 
           <div class="col-2 text-left small">
-            0m 00s 000ms 
+            0m 00s 243ms 
           </div> 
           <div class="col-1 text-right"> 
-           <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> 
+           <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
           </div> 
          </div> </li> 
        </div> 
@@ -429,7 +429,7 @@
   </main> 
   <footer class="footer navbar-dark bg-dark"> 
    <div class="container-fluid"> 
-    <span>Cluecumber Report Plugin version 1.7.2 - 2019/04/12 07:04:48.</span> 
+    <span>Cluecumber Report Plugin version 1.7.2 - 2019/04/12 10:48:03.</span> 
    </div> 
   </footer>   
  </body>
