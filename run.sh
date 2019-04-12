@@ -14,15 +14,31 @@ function run_tests {
         then
         ./mvnw -P run integration-test -Denv=$env -Dselenide.remote="http://35.234.68.105:4444/wd/hub"
         ./mvnw -P generate-report post-integration-test
+        show_report
         elif [ $grid == 'no' ]
         then
         ./mvnw -P run integration-test -Denv=$env
         ./mvnw -P generate-report post-integration-test
+        show_report
         else
         echo "invalid option"
 		break
         fi
+}
 
+function show_report {
+echo "Do you want to see report after run? Type [yes, no]"
+        read -p 'show report? (yes, no): ' report
+         if [ $report == 'yes' ]
+        then
+        cd target/cluecumber-report
+        echo $PWD
+        start index.html
+        open index.html
+        xdg-open index.html
+        else
+        break
+        fi
 }
 
 select env in "${options[@]}"
