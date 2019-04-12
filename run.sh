@@ -9,19 +9,20 @@ function run_tests {
         echo "Do you want to use grid? Type [yes, no]"
         read -p 'use grid (yes, no): ' grid
         ./mvnw clean install
-        ./mvnw -P regression,generate generate-test-sources
-
+        ./mvnw -P $suite,generate generate-test-sources
         if [ $grid == 'yes' ]
         then
-        ./mvnw -P run integration-test -Denv=$env -Dselenide.remote="http://35.234.68.105:4444/wd/hub" -Dcucumber.options="--tags @$suite"
+        ./mvnw -P run integration-test -Denv=$env -Dselenide.remote="http://35.234.68.105:4444/wd/hub"
+        ./mvnw -P generate-report post-integration-test
         elif [ $grid == 'no' ]
         then
-        ./mvnw -P run integration-test -Denv=$env -Dcucumber.options="--tags @$suite"
+        ./mvnw -P run integration-test -Denv=$env
+        ./mvnw -P generate-report post-integration-test
         else
         echo "invalid option"
 		break
         fi
-        ./mvnw -P generate-report post-integration-test
+
 }
 
 select env in "${options[@]}"
