@@ -43,4 +43,11 @@ Feature: Question
     Given User has opened 'Training for Automation test' competition
     And has added question
     When User editing previously added question
-    Then edit question is saved on Training Page
+    Then question is saved according to the changes
+
+  @type:sunny @role=admin
+  Scenario: Cancel editing question
+    Given User has opened 'Training for Automation test' competition
+    And has added question
+    When User canceling edition previously added question
+    Then question is saved according to the changes

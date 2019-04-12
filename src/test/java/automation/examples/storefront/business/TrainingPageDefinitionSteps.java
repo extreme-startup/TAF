@@ -14,6 +14,8 @@ public class TrainingPageDefinitionSteps extends CucumberDefinitionSteps {
     private String question;
     private String answer = "Simple answer";
     private String value = "1";
+    private String answerSuffix = " after editing";
+    private String valueSuffix = "2";
 
     @Autowired
     private TrainingPage trainingPage;
@@ -65,9 +67,6 @@ public class TrainingPageDefinitionSteps extends CucumberDefinitionSteps {
 
     @When("^User editing previously added question$")
     public void editPreviousQuestion() {
-        final String answerSuffix = " after editing";
-        final String valueSuffix = "2";
-
         trainingPage.editQuestion(question);
         trainingPage.getQuestionFragment().provideAnswerWithValue(answerSuffix, valueSuffix);
         trainingPage.getQuestionFragment().saveQuestion();
@@ -76,7 +75,14 @@ public class TrainingPageDefinitionSteps extends CucumberDefinitionSteps {
         value = value + valueSuffix;
     }
 
-    @Then("^edit question is saved on Training Page$")
+    @When("^User canceling edition previously added question$")
+    public void cancelEditPreviousQuestion() {
+        trainingPage.editQuestion(question);
+        trainingPage.getQuestionFragment().provideAnswerWithValue(answerSuffix, valueSuffix);
+        trainingPage.getQuestionFragment().cancelQuestion();
+    }
+
+    @Then("^question is saved according to the changes$")
     public void verifyQuestionIsSaved() {
         trainingPage.refreshPage();
         trainingPage.editQuestion(question);
