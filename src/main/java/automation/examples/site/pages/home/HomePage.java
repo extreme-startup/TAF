@@ -1,7 +1,9 @@
 package automation.examples.site.pages.home;
 
-import automation.examples.site.components.competition.CompetitionFragment;
 import automation.examples.site.components.login.LoginFragment;
+import automation.examples.site.components.trainings.AddNewTrainingPopUp;
+import automation.examples.site.components.trainings.ConfirmDeletionPopUp;
+import automation.examples.site.components.trainings.TrainingSectionFragment;
 import automation.examples.site.pages.Page;
 import com.codeborne.selenide.SelenideElement;
 
@@ -9,7 +11,11 @@ public interface HomePage extends Page {
 
     LoginFragment getLoginFragment();
 
-    CompetitionFragment getCompetitionFragment();
+    TrainingSectionFragment getTrainingSectionFragment();
+
+    AddNewTrainingPopUp getAddNewTrainingPopUp();
+
+    ConfirmDeletionPopUp getConfirmDeletionPopUp();
 
     SelenideElement getLogoLink();
 
@@ -19,6 +25,8 @@ public interface HomePage extends Page {
 
     String getProfileEmail();
 
-    void clickCompetitionLink(String name);
+    boolean isAddNewTrainingPopUpDisplayed();
+
+    SelenideElement getAddNewTrainingPopUpAsSelenideElement();
 
 }

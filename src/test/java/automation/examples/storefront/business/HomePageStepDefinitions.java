@@ -12,12 +12,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class HomePageStepDefinitions extends CucumberDefinitionSteps {
 
+    private String trainingName;
+    private String trainingDescription;
+
     @Autowired
     private HomePage homePage;
 
-    @Given("^User has opened '([\\w\\s]+)' competition$")
-    public void openCompetition(final String name) {
-        homePage.clickCompetitionLink(name);
+    @Given("^User has opened '([\\w\\s]+)' training")
+    public void openCompetition(final String trainingName) {
+        homePage.getTrainingSectionFragment().waitForTrainingToAppear(trainingName);
+        homePage.getTrainingSectionFragment().clickOnTrainingName(trainingName);
     }
 
     @Given("^User has navigated to Home Page$")
@@ -31,9 +35,49 @@ public class HomePageStepDefinitions extends CucumberDefinitionSteps {
         homePage.getLoginFragment().login(userLogin);
     }
 
+    @Given("^User (?:adds|has added) new training$")
+    public void addNewTraining() {
+        trainingName = String.format("Simple training %s", getTimestamp());
+        trainingDescription = String.format("Training description %s", getTimestamp());
+
+        clickOnAddNewTraining();
+        homePage.getAddNewTrainingPopUp().provideDetailsForTrainingCreation(trainingName, trainingDescription);
+        homePage.getAddNewTrainingPopUp().saveTrainingCreation();
+        homePage.getTrainingSectionFragment().waitForTrainingToAppear(trainingName);
+    }
+
+    @When("^User clicks on Add to Training$")
+    public void clickOnAddNewTraining() {
+        homePage.getTrainingSectionFragment().clickAddNewTrainingButton();
+    }
+
+    @When("^User deletes the training$")
+    public void deleteTraining() {
+        homePage.getTrainingSectionFragment().deleteTrainingByName(trainingName);
+        homePage.getConfirmDeletionPopUp().confirmDeletion();
+    }
+
+    @When("^User cancels deletion of the training$")
+    public void cancelTrainingDeletion() {
+        homePage.getTrainingSectionFragment().deleteTrainingByName(trainingName);
+        homePage.getConfirmDeletionPopUp().cancelDeletion();
+    }
+
+    @When("^User edits the training$")
+    public void editTraining() {
+        trainingName = String.format("Updated training %s", getTimestamp());
+        homePage.getTrainingSectionFragment().editTrainingByName(trainingName);
+    }
+
     @When("^User logs in$")
     public void login() {
         homePage.getLoginFragment().login(userLogin);
+    }
+
+
+    @When("^User cancels training creation$")
+    public void cancelTrainingCreation() {
+        homePage.getAddNewTrainingPopUp().cancelTrainingCreation();
     }
 
     @When("^User provides invalid email: (.*)$")
@@ -60,6 +104,30 @@ public class HomePageStepDefinitions extends CucumberDefinitionSteps {
             softAssertions.assertThat(homePage.isProfileLinkEnabled())
                     .withFailMessage("User is not logged in").isTrue();
         });
+    }
+
+    @Then("^(?:added|updated) training is displayed on Home Page in the Training section$")
+    public void verifyAddedTrainingIsDisplayed() {
+        assertThat(homePage.getTrainingSectionFragment().isAddedTrainingDisplayed(trainingName, trainingDescription))
+                .withFailMessage("Added or Updated training is missing " + trainingName).isTrue();
+    }
+
+    @Then("^add new training pop up is not displayed on Home Page$")
+    public void verifyAddNewTrainingPopUpIsNotDisplayed() {
+        assertThat(homePage.isAddNewTrainingPopUpDisplayed())
+                .withFailMessage("Add new training pop up is displayed").isFalse();
+    }
+
+    @Then("^save button is disabled$")
+    public void verifySaveButtonIsDisabled() {
+        assertThat(homePage.getAddNewTrainingPopUp().isSaveButtonEnabled())
+                .withFailMessage("Save button is enabled").isFalse();
+    }
+
+    @Then("^training is not displayed on Home Page in the Training section$")
+    public void verifyAddedTrainingIsNotDisplayed() {
+        assertThat(homePage.getTrainingSectionFragment().isAddedTrainingDisplayed(trainingName, trainingDescription))
+                .withFailMessage("Deleted training is displayed " + trainingName).isFalse();
     }
 
 }
