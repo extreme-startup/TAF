@@ -1,4 +1,4 @@
-package automation.examples;
+package automation.examples.storefront;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -10,5 +10,5 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/storefront",
         plugin = {"pretty", "json:target/cucumber-report/cucumber.json"}
 )
-public class RunCucumberTest {
+public class CucumberStorefrontRunner {
 }
