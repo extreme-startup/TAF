@@ -35,6 +35,7 @@ public class TrainingPageDefinitionSteps extends CucumberDefinitionSteps {
         trainingPage.openNewQuestionFragment();
         trainingPage.getQuestionFragment().provideRequiredDetailsForQuestion(question, answer, value);
         trainingPage.getQuestionFragment().saveQuestion();
+        trainingPage.waitUntilQuestionShouldBeAppear(question);
     }
 
     @When("^User tries add question with empty fileds$")
@@ -46,6 +47,7 @@ public class TrainingPageDefinitionSteps extends CucumberDefinitionSteps {
     @When("^User saves question$")
     public void saveQuestion() {
         trainingPage.getQuestionFragment().saveQuestion();
+        trainingPage.waitUntilQuestionShouldBeAppear(question);
     }
 
     @When("^User cancel question creation$")
@@ -63,6 +65,7 @@ public class TrainingPageDefinitionSteps extends CucumberDefinitionSteps {
     public void deletePreviousQuestion() {
         trainingPage.deleteQuestion(question);
         trainingPage.getDeleteQuestionFragment().confirmDeletion();
+        trainingPage.waitUntilQuestionShouldBeDisappear(question);
     }
 
     @When("^User editing previously added question$")
@@ -70,6 +73,7 @@ public class TrainingPageDefinitionSteps extends CucumberDefinitionSteps {
         trainingPage.editQuestion(question);
         trainingPage.getQuestionFragment().provideAnswerWithValue(answerSuffix, valueSuffix);
         trainingPage.getQuestionFragment().saveQuestion();
+        trainingPage.refreshPage();
 
         answer = answer + answerSuffix;
         value = value + valueSuffix;
@@ -84,7 +88,6 @@ public class TrainingPageDefinitionSteps extends CucumberDefinitionSteps {
 
     @Then("^question is saved according to the changes$")
     public void verifyQuestionIsSaved() {
-        trainingPage.refreshPage();
         trainingPage.editQuestion(question);
 
         SoftAssertions.assertSoftly(softAssertions -> {
@@ -94,22 +97,16 @@ public class TrainingPageDefinitionSteps extends CucumberDefinitionSteps {
         });
     }
 
-    @Then("^deleted question is inactive on Training Page$")
-    public void verifyQuestionIsInactive() {
-        assertThat(trainingPage.isAddedQuestionDisabled(question))
-                .withFailMessage("Added question is active").isTrue();
-    }
-
     @Then("^added question is displayed on Training Page$")
     public void verifyAddedQuestionIsDisplayed() {
         assertThat(trainingPage.isAddedQuestionDisplayed(question))
                 .withFailMessage("Added question is missing").isTrue();
     }
 
-    @Then("^added question is missing on Training Page$")
-    public void verifyAddedQuestionIsMissing() {
+    @Then("^question is not present on Training Page$")
+    public void verifyQuestionIsNotPresent() {
         assertThat(trainingPage.isAddedQuestionExist(question))
-                .withFailMessage("Added question is exist").isFalse();
+                .withFailMessage("Added question is present").isFalse();
     }
 
     @Then("^validation error messages for add question mandatory fields are displayed$")

@@ -8,9 +8,7 @@ import org.openqa.selenium.By;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import static com.codeborne.selenide.Condition.cssClass;
-import static com.codeborne.selenide.Condition.enabled;
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
@@ -50,6 +48,16 @@ public class TrainingPageImpl implements TrainingPage {
     }
 
     @Override
+    public void waitUntilQuestionShouldBeDisappear(final String question) {
+        getDeleteButton(question).shouldBe(disappear);
+    }
+
+    @Override
+    public void waitUntilQuestionShouldBeAppear(final String question) {
+        getDeleteButton(question).shouldBe(appear);
+    }
+
+    @Override
     public void editQuestion(final String question) {
         getEditButton(question).shouldBe(enabled).scrollTo().click();
     }
@@ -62,11 +70,6 @@ public class TrainingPageImpl implements TrainingPage {
     @Override
     public boolean isAddedQuestionExist(final String question) {
         return getAddedQuestions().findBy(text(question)).exists();
-    }
-
-    @Override
-    public boolean isAddedQuestionDisabled(final String question) {
-        return getAddedQuestions().findBy(text(question)).shouldBe(cssClass("enerSK")).isDisplayed();
     }
 
     private ElementsCollection getAddedQuestions() {

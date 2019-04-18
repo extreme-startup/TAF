@@ -18,8 +18,10 @@ public interface TrainingPage extends Page {
 
     boolean isAddedQuestionDisplayed(String question);
 
-    boolean isAddedQuestionDisabled(String question);
-
     boolean isAddedQuestionExist(String question);
+
+    void waitUntilQuestionShouldBeDisappear(String question);
+
+    void waitUntilQuestionShouldBeAppear(String question);
 
 }
