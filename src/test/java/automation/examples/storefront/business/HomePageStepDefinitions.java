@@ -6,17 +6,14 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.assertj.core.api.SoftAssertions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 
+import static automation.examples.framework.spring.CustomerHelper.userLogin;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class HomePageStepDefinitions extends CucumberDefinitionSteps {
 
     @Autowired
     private HomePage homePage;
-
-    @Value("${user.login}")
-    private String login;
 
     @Given("^User has opened '([\\w\\s]+)' competition$")
     public void openCompetition(final String name) {
@@ -31,12 +28,12 @@ public class HomePageStepDefinitions extends CucumberDefinitionSteps {
     @Given("^logged in User$")
     public void navigateToLandingPageAndLogin() {
         homePage.openPage();
-        homePage.getLoginFragment().login(login);
+        homePage.getLoginFragment().login(userLogin);
     }
 
     @When("^User logs in$")
     public void login() {
-        homePage.getLoginFragment().login(login);
+        homePage.getLoginFragment().login(userLogin);
     }
 
     @When("^User provides invalid email: (.*)$")
@@ -59,7 +56,7 @@ public class HomePageStepDefinitions extends CucumberDefinitionSteps {
     @Then("^they are logged in$")
     public void verifyUserIsLoggedIn() {
         SoftAssertions.assertSoftly(softAssertions -> {
-            softAssertions.assertThat(homePage.getProfileEmail()).isEqualTo(login);
+            softAssertions.assertThat(homePage.getProfileEmail()).isEqualTo(userLogin);
             softAssertions.assertThat(homePage.isProfileLinkEnabled())
                     .withFailMessage("User is not logged in").isTrue();
         });

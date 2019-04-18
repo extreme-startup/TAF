@@ -1,6 +1,6 @@
 Feature: Login
 
-  @smoke @regression @type:sunny
+  @smoke @regression @type:sunny @admin
   Scenario: User Login on site
     Given User has navigated to Home Page
     When User logs in
