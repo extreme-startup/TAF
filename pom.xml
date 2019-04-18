@@ -96,7 +96,7 @@
 
     <profiles>
         <profile>
-            <id>generate</id>
+            <id>storefront</id>
             <build>
                 <plugins>
                     <plugin>
@@ -119,7 +119,46 @@
                                         </plugin>
                                     </plugins>
                                     <outputDirectory>${project.build.directory}/generated/runners</outputDirectory>
-                                    <featuresDirectory>src/test/resources/</featuresDirectory>
+                                    <featuresDirectory>src/test/resources/features/storefront</featuresDirectory>
+                                    <strict>true</strict>
+                                    <monochrome>true</monochrome>
+                                    <namingScheme>pattern</namingScheme>
+                                    <namingPattern>{f}Runner{c}</namingPattern>
+                                    <parallelScheme>SCENARIO</parallelScheme>
+                                    <customVmTemplate>src/test/resources/RunnerTemplate.vm</customVmTemplate>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>api</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.temyers</groupId>
+                        <artifactId>cucumber-jvm-parallel-plugin</artifactId>
+                        <version>${cucumber.parallel.plugin}</version>
+                        <executions>
+                            <execution>
+                                <id>generateRunners</id>
+                                <phase>generate-test-sources</phase>
+                                <goals>
+                                    <goal>generateRunners</goal>
+                                </goals>
+                                <configuration>
+                                    <glue>automation.examples.api.business</glue>
+                                    <plugins>
+                                        <plugin>
+                                            <name>json</name>
+                                            <outputDirectory>${project.build.directory}/cucumber-report</outputDirectory>
+                                        </plugin>
+                                    </plugins>
+                                    <outputDirectory>${project.build.directory}/generated/runners</outputDirectory>
+                                    <featuresDirectory>src/test/resources/features/api</featuresDirectory>
                                     <strict>true</strict>
                                     <monochrome>true</monochrome>
                                     <namingScheme>pattern</namingScheme>
@@ -251,7 +290,8 @@
                 <version>${maven.surefire.plugin}</version>
                 <configuration>
                     <excludes>
-                        <exclude>**/RunCucumberTest.class</exclude>
+                        <exclude>**/CucumberStorefrontRunner.class</exclude>
+                        <exclude>**/CucumberApiRunner.class</exclude>
                     </excludes>
                 </configuration>
             </plugin>

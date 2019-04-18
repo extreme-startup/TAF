@@ -1,6 +1,6 @@
 Feature: Login
 
-  @smoke
+  @smoke @regression
   Scenario: User Login by API
     When Client calls Login service
     Then response status code is 200
