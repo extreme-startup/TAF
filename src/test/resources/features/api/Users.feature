@@ -1,6 +1,6 @@
 Feature: Users
 
-  @smoke @regression
+  @smoke @regression @type:sunny
   Scenario: Get All Users
     When Client calls All Users service
     Then response status code is 200
