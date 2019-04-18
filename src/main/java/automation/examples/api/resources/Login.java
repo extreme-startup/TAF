@@ -1,6 +1,6 @@
 package automation.examples.api.resources;
 
-import automation.examples.api.model.requestform.LoginForm;
+import automation.examples.api.model.request.LoginDTO;
 import io.restassured.response.Response;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ public class Login {
     private static final String LOGIN_PATH = "/auth/login/";
 
     public Response post(final String userLogin) {
-        return request.body(new LoginForm(userLogin))
+        return request.body(new LoginDTO(userLogin))
                 .post(LOGIN_PATH);
     }
 

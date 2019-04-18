@@ -22,7 +22,7 @@ public class AppConfig {
     }
 
     @Bean
-    public Logger logger(){
+    public Logger logger() {
         return LoggerFactory.getLogger("application");
     }
 
