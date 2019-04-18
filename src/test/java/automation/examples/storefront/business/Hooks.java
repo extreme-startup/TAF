@@ -1,6 +1,6 @@
 package automation.examples.storefront.business;
 
-
+import automation.examples.api.common.CommonSteps;
 import automation.examples.framework.spring.AppConfig;
 import automation.examples.framework.spring.CustomerHelper;
 import com.codeborne.selenide.Configuration;
@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.ContextConfiguration;
 
-import static automation.examples.framework.spring.CustomerHelper.userLogin;
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 
 @ContextConfiguration(classes = AppConfig.class)
@@ -27,6 +26,9 @@ public class Hooks {
 
     @Autowired
     private CustomerHelper customerHelper;
+
+    @Autowired
+    private CommonSteps commonSteps;
 
     @Before(order = 0)
     public void setupBrowser() {
@@ -45,8 +47,9 @@ public class Hooks {
     }
 
     @Before(order = 2, value = "@admin")
-    public void setCustomerLogin() {
-        userLogin = customerHelper.getRandomRegisteredEmail();
+    public void setUserLogin() {
+        commonSteps.setApiRequestSpecification();
+        commonSteps.setUserLogin();
     }
 
     @Before(order = 2)
