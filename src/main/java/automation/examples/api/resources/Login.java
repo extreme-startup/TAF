@@ -16,4 +16,9 @@ public class Login {
         return given().spec(requestSpecification).body(new LoginDTO(userLogin)).post(ENDPOINT);
     }
 
+    public void setLoginCookie(final Response response) {
+        final String session = "connect.sid";
+        request.cookie(session, response.getCookie(session));
+    }
+
 }

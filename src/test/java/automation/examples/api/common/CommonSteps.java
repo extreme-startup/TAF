@@ -1,5 +1,6 @@
 package automation.examples.api.common;
 
+import automation.examples.api.resources.Login;
 import automation.examples.framework.spring.AppConfig;
 import automation.examples.framework.spring.CustomerHelper;
 import io.restassured.builder.RequestSpecBuilder;
@@ -28,6 +29,9 @@ public class CommonSteps {
 
     @Autowired
     private CustomerHelper customerHelper;
+
+    @Autowired
+    private Login login;
 
     public void setApiRequestSpecification() {
         requestSpecification = new RequestSpecBuilder()
