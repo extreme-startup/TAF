@@ -1,24 +1,29 @@
 package automation.examples.site.pages.home;
 
-import automation.examples.site.components.competition.CompetitionFragment;
 import automation.examples.site.components.login.LoginFragment;
-import com.codeborne.selenide.ElementsCollection;
+import automation.examples.site.components.trainings.AddNewTrainingPopUp;
+import automation.examples.site.components.trainings.ConfirmDeletionPopUp;
+import automation.examples.site.components.trainings.TrainingSectionFragment;
 import com.codeborne.selenide.SelenideElement;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 
 @Component
 public class HomePageImpl implements HomePage {
 
     @Autowired
-    private CompetitionFragment competitionFragment;
+    private TrainingSectionFragment trainingSectionFragment;
+
+    @Autowired
+    private AddNewTrainingPopUp addNewTrainingPopUp;
+
+    @Autowired
+    private ConfirmDeletionPopUp confirmDeletionPopUp;
 
     @Autowired
     private Logger logger;
@@ -48,8 +53,23 @@ public class HomePageImpl implements HomePage {
     }
 
     @Override
-    public CompetitionFragment getCompetitionFragment() {
-        return competitionFragment;
+    public TrainingSectionFragment getTrainingSectionFragment() {
+        return trainingSectionFragment;
+    }
+
+    @Override
+    public AddNewTrainingPopUp getAddNewTrainingPopUp() {
+        return addNewTrainingPopUp;
+    }
+
+    @Override
+    public ConfirmDeletionPopUp getConfirmDeletionPopUp() {
+        return confirmDeletionPopUp;
+    }
+
+    @Override
+    public SelenideElement getAddNewTrainingPopUpAsSelenideElement() {
+        return $("div.dADPtf");
     }
 
     @Override
@@ -63,12 +83,8 @@ public class HomePageImpl implements HomePage {
     }
 
     @Override
-    public void clickCompetitionLink(final String name) {
-        getCompetitionLinks().findBy(exactText(name)).scrollTo().click();
-    }
-
-    private ElementsCollection getCompetitionLinks() {
-        return $$("a[href*='/training/']");
+    public boolean isAddNewTrainingPopUpDisplayed() {
+        return getAddNewTrainingPopUpAsSelenideElement().isDisplayed();
     }
 
     private SelenideElement getProfileLink() {
