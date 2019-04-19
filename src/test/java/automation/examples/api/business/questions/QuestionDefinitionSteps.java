@@ -1,46 +1,78 @@
 package automation.examples.api.business.questions;
 
-import automation.examples.api.RestAssuredContext;
 import automation.examples.api.model.request.QuestionDTO;
 import automation.examples.api.resources.AllQuestions;
-import cucumber.api.java.en.And;
+import automation.examples.api.resources.Question;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.assertj.core.api.Assertions;
-import org.assertj.core.api.SoftAssertions;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
+
+import static automation.examples.api.RestAssuredContext.response;
+import static automation.examples.api.model.request.QuestionDTO.getQuestionToUpdate;
+import static automation.examples.framework.spring.utils.RandomUtils.getRandomFromCollection;
+import static java.lang.String.format;
+import static java.util.Arrays.asList;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class QuestionDefinitionSteps {
 
     @Autowired
+    private Question question;
+
+    @Autowired
     private AllQuestions allQuestions;
 
-    @When("^Client calls All Questions service$")
-    public void callAllQuestionsService() {
-        RestAssuredContext.response = allQuestions.get();
+    private QuestionDTO STORED_QUESTION;
+
+    @When("^Client call Get Question service$")
+    public void getQuestionById() {
+        final QuestionDTO randomQuestion = getRandomQuestionDTO();
+        response = question.get(randomQuestion.getId());
+        STORED_QUESTION = randomQuestion;
     }
 
-    @When("^Client call Add Question service$")
-    public void callAddQuestionService() {
-        RestAssuredContext.response = allQuestions.post();
+    @When("^Client call Update Question service$")
+    public void updateQuestion() {
+        final QuestionDTO randomQuestion = getRandomQuestionDTO();
+        STORED_QUESTION = getQuestionToUpdate(randomQuestion.getId());
+        response = question.put(STORED_QUESTION);
     }
 
-    @And("^response contains questions with ids$")
-    public void verifyQuestionListIsNotEmpty() {
-        final List<QuestionDTO> allQuestionsDTO = Arrays.asList(RestAssuredContext.response.as(QuestionDTO[].class));
-        SoftAssertions.assertSoftly(softly -> {
-            softly.assertThat(allQuestionsDTO).isNotEmpty();
-            softly.assertThat(allQuestionsDTO.stream().noneMatch(it -> it.getId().isEmpty()))
-                    .withFailMessage("At least one question doesn't have id").isTrue();
-        });
+    @When("^Client call Delete Question service$")
+    public void deleteQuestion() {
+        STORED_QUESTION = getRandomQuestionDTO();
+        response = question.delete(STORED_QUESTION.getId());
     }
 
-    @And("^response contains added question$")
-    public void verifyResponseContainsAddedQuestion(){
-        final QuestionDTO questionDTO = RestAssuredContext.response.as(QuestionDTO.class);
-        Assertions.assertThat(questionDTO.getText()).isEqualTo("");
+    @Then("^response contains requested question$")
+    public void verifyResponseContainsRequestedQuestion() {
+        assertThat(response.as(QuestionDTO.class)).isEqualTo(STORED_QUESTION);
+    }
+
+    @Then("^question is updated$")
+    public void verifyQuestionIsUpdate() {
+        final QuestionDTO updatedQuestion = getQuestionById(STORED_QUESTION.getId());
+        assertThat(updatedQuestion).isEqualToIgnoringGivenFields(STORED_QUESTION, "id");
+    }
+
+    @Then("^question is deleted$")
+    public void verifyQuestionIsDeleted() {
+        assertThat(asList(allQuestions.get().as(QuestionDTO[].class))).doesNotContain(STORED_QUESTION);
+    }
+
+    private QuestionDTO getRandomQuestionDTO() {
+        final List<QuestionDTO> questions = asList(allQuestions.get().as(QuestionDTO[].class));
+        return getRandomFromCollection(questions);
+    }
+
+    private QuestionDTO getQuestionById(final String questionId) {
+        final List<QuestionDTO> questions = asList(allQuestions.get().as(QuestionDTO[].class));
+        return questions.stream()
+                .filter(question -> question.getId().equals(questionId)).findFirst().orElseThrow(() ->
+                        new NoSuchElementException(format("No question was found with id %s", questionId)));
     }
 
 }

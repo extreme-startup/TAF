@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class AllUsers {
 
-    private static final String ALL_USERS_PATH = "/users";
+    private static final String ENDPOINT = "/users";
 
     public Response get() {
-        return RestAssuredContext.request.get(ALL_USERS_PATH);
+        return RestAssuredContext.request.get(ENDPOINT);
     }
 
 }

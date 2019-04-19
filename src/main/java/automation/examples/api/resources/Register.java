@@ -4,16 +4,17 @@ import automation.examples.api.model.request.LoginDTO;
 import io.restassured.response.Response;
 import org.springframework.stereotype.Service;
 
-import static automation.examples.api.RestAssuredContext.request;
 import static automation.examples.framework.spring.CustomerHelper.getNewEmail;
+import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.requestSpecification;
 
 @Service
 public class Register {
 
-    private static final String REGISTER_PATH = "/auth/register";
+    private static final String ENDPOINT = "/auth/register";
 
     public Response post() {
-        return request.body(new LoginDTO(getNewEmail())).post(REGISTER_PATH);
+        return given().spec(requestSpecification).body(new LoginDTO(getNewEmail())).post(ENDPOINT);
     }
 
 }

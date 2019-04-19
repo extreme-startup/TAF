@@ -1,7 +1,21 @@
 package automation.examples.api.model.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import static java.time.LocalDate.now;
+
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor(force = true)
+@AllArgsConstructor
+@EqualsAndHashCode
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class QuestionDTO {
 
@@ -13,60 +27,25 @@ public class QuestionDTO {
     private boolean isDeleted;
     private String contestId;
 
-    public String getType() {
-        return type;
+    public static QuestionDTO getQuestionToAdd() {
+        return QuestionDTO.builder()
+                .type("static")
+                .text("What is the capital of Ukraine?")
+                .answer("Kyiv")
+                .value("4")
+                .contestId("2")
+                .build();
     }
 
-    public void setType(final String type) {
-        this.type = type;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(final String text) {
-        this.text = text;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(final String answer) {
-        this.answer = answer;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(final String value) {
-        this.value = value;
-    }
-
-    public boolean isDeleted() {
-        return isDeleted;
-    }
-
-    public void setDeleted(final boolean deleted) {
-        isDeleted = deleted;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(final String id) {
-        this.id = id;
-    }
-
-    public String getContestId() {
-        return contestId;
-    }
-
-    public void setContestId(final String contestId) {
-        this.contestId = contestId;
+    public static QuestionDTO getQuestionToUpdate(final String questionId) {
+        return QuestionDTO.builder()
+                .id(questionId)
+                .type("static")
+                .text("What day is today?")
+                .answer(now().toString())
+                .value("4")
+                .contestId("2")
+                .build();
     }
 
 }
