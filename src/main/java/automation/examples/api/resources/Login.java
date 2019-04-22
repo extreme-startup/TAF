@@ -16,4 +16,13 @@ public class Login {
         return given().spec(requestSpecification).body(new LoginDTO(userLogin)).post(ENDPOINT);
     }
 
+    public void setLoginCookie(final Response response) {
+        final String session = "connect.sid";
+        if (response == null || !response.getCookies().containsKey(session)) {
+            throw new IllegalStateException("Login response doesn't contain any cookie");
+        } else {
+            requestSpecification.cookie(session, response.getCookie(session));
+        }
+    }
+
 }

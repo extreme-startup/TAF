@@ -1,12 +1,16 @@
 package automation.examples.api.business;
 
+import automation.examples.api.RestAssuredContext;
 import automation.examples.api.common.CommonSteps;
 import automation.examples.framework.spring.AppConfig;
 import automation.examples.framework.spring.CustomerHelper;
 import cucumber.api.java.Before;
+import io.restassured.RestAssured;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.context.ContextConfiguration;
+
+import static io.restassured.RestAssured.requestSpecification;
 
 @ContextConfiguration(classes = AppConfig.class)
 public class ApiHooks {

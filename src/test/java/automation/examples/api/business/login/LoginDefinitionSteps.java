@@ -7,6 +7,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static automation.examples.api.RestAssuredContext.response;
 import static automation.examples.framework.spring.CustomerHelper.userLogin;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,9 +16,10 @@ public class LoginDefinitionSteps {
     @Autowired
     private Login login;
 
-    @When("^Client calls Login service$")
+    @When("^Client (?:calls|has called) Login service$")
     public void callLoginService() {
         RestAssuredContext.response = login.post(userLogin);
+        login.setLoginCookie(response);
     }
 
     @Then("^response contains expected email")

@@ -13,9 +13,12 @@ import lombok.Setter;
 @NoArgsConstructor(force = true)
 @AllArgsConstructor
 @EqualsAndHashCode
-public class UserDTO {
+public class CustomerDTO {
 
     private String id;
+    private String firstName;
+    private String lastName;
+    private String phone;
     private String email;
 
 }

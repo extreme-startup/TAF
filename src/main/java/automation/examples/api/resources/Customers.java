@@ -7,9 +7,9 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.requestSpecification;
 
 @Service
-public class AllUsers {
+public class Customers {
 
-    private static final String ENDPOINT = "/users";
+    private static final String ENDPOINT = "/customers";
 
     public Response get() {
         return given().spec(requestSpecification).get(ENDPOINT);

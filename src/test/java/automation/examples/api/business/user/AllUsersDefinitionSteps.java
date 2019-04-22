@@ -1,6 +1,5 @@
 package automation.examples.api.business.user;
 
-import automation.examples.api.RestAssuredContext;
 import automation.examples.api.model.response.UserDTO;
 import automation.examples.api.resources.AllUsers;
 import cucumber.api.java.en.Then;
@@ -10,21 +9,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
+import static automation.examples.api.RestAssuredContext.response;
 import static java.util.Arrays.asList;
 
-public class UsersDefinitionSteps {
+public class AllUsersDefinitionSteps {
 
     @Autowired
     private AllUsers allUsers;
 
     @When("^Client calls All Users service$")
     public void callAllUsersService() {
-        RestAssuredContext.response = allUsers.get();
+        response = allUsers.get();
     }
 
     @Then("^response contains list of Users$")
     public void verifyResponseContainsUsers() {
-        final List<UserDTO> allUsersDTO = asList(RestAssuredContext.response.as(UserDTO[].class));
+        final List<UserDTO> allUsersDTO = asList(response.as(UserDTO[].class));
 
         SoftAssertions.assertSoftly(softly -> {
             softly.assertThat(allUsersDTO.stream().noneMatch(it -> it.getEmail().isEmpty()))
