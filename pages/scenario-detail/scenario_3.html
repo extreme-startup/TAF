@@ -22,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
   <meta name="description" content="Cluecumber Report Plugin version 1.7.2 - Scenario Details"> 
   <meta name="author" content="Cluecumber Report Plugin version 1.7.2"> 
-  <title>Scenario Details - 2019/04/12 13:51:12</title> 
+  <title>Scenario Details - 2019/04/22 09:44:57</title> 
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"> 
   <link rel="stylesheet" href="css/cluecumber.css" type="text/css"> 
   <link rel="stylesheet" href="css/cluecumber_custom.css"> 
@@ -70,23 +70,29 @@
       "Before 3",
       "Before 4",
       "Before 5",
+      "Before 6",
       "Step 1",
       "Step 2",
-      "Step 3"
+      "Step 3",
+      "Step 4"
     ],
     "datasets": [
       {
         "data": [
+          1,
+          0,
+          119,
           0,
           0,
-          124,
           0,
           0,
-          416,
-          1103,
+          0,
+          0,
           0
         ],
         "backgroundColor": [
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
@@ -104,13 +110,17 @@
           0,
           0,
           0,
+          171,
           0,
           0,
           0,
           0,
-          2604
+          0,
+          0
         ],
         "backgroundColor": [
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
@@ -132,9 +142,13 @@
           0,
           0,
           0,
+          0,
+          0,
           0
         ],
         "backgroundColor": [
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
@@ -231,14 +245,14 @@
      <li class="nav-item"> <a class="nav-link" href="pages/scenario-sequence.html">Scenario Sequence</a> </li> 
      <li class="nav-item"> <a class="nav-link" href="index.html">All Scenarios</a> </li> 
     </ul> 
-    <span class="text-light">2019/04/12 13:51:12</span> 
+    <span class="text-light">2019/04/22 09:44:57</span> 
    </div> 
   </nav> 
   <main role="main" class="container"> 
    <div class="cluecumber-template"> 
     <div class="pb-2 mt-4 mb-2 border-bottom"> 
-     <h5><a href="pages/feature-scenarios/feature_0.html">Login</a></h5> 
-     <h3>User Login on site</h3> 
+     <h5><a href="pages/feature-scenarios/feature_1.html">Delete Training</a></h5> 
+     <h3>Delete training</h3> 
     </div> 
     <div class="row"> 
      <div class="col-sm-8  h-auto" data-cluecumber-item="card"> 
@@ -260,10 +274,10 @@
        </div> 
        <div class="card-body"> 
         <ul class="list-group list-group-flush"> 
-         <li class="list-group-item">3 Step(s)</li> 
-         <li class="list-group-item"> 2 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 1 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 0 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> </li> 
-         <li class="list-group-item">Duration: 0m 04s 250ms</li> 
-         <li class="list-group-item"> <a href="pages/tag-scenarios/tag_smoke.html">@smoke</a>, <a href="pages/tag-scenarios/tag_regression.html">@regression</a>, <a href="pages/tag-scenarios/tag_type:sunny.html">@type:sunny</a> </li> 
+         <li class="list-group-item">4 Step(s)</li> 
+         <li class="list-group-item"> 0 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 0 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 4 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> </li> 
+         <li class="list-group-item">Duration: 0m 00s 292ms</li> 
+         <li class="list-group-item"> <a href="pages/tag-scenarios/tag_regression.html">@regression</a>, <a href="pages/tag-scenarios/tag_type:sunny.html">@type:sunny</a>, <a href="pages/tag-scenarios/tag_admin.html">@admin</a>, <a href="pages/tag-scenarios/tag_issue:102.html">@issue:102</a> </li> 
         </ul> 
         <button class="btn btn-outline-secondary btn-block collapsed" type="button" data-toggle="collapse" aria-expanded="true" data-cluecumber-item="before-after-hooks-button" data-target=".scenarioHook">Before/After Hooks </button> 
        </div> 
@@ -286,7 +300,7 @@
            <i>Hooks.setupBrowser()</i> 
           </div> 
           <div class="col-2 text-left small">
-            0m 00s 000ms 
+            0m 00s 001ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
@@ -314,73 +328,7 @@
            <i>Hooks.clearCookies()</i> 
           </div> 
           <div class="col-2 text-left small">
-            0m 00s 124ms 
-          </div> 
-          <div class="col-1 text-right"> 
-           <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
-          </div> 
-         </div> 
-         <div class="row row_passed"> 
-          <div class="col-1 text-left">
-           4.
-          </div> 
-          <div class="col-8 text-left"> 
-           <i>Hooks.setupBaseURL()</i> 
-          </div> 
-          <div class="col-2 text-left small">
-            0m 00s 000ms 
-          </div> 
-          <div class="col-1 text-right"> 
-           <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
-          </div> 
-         </div> 
-         <div class="row row_passed"> 
-          <div class="col-1 text-left">
-           5.
-          </div> 
-          <div class="col-8 text-left"> 
-           <i>Hooks.maximizeBrowser()</i> 
-          </div> 
-          <div class="col-2 text-left small">
-            0m 00s 000ms 
-          </div> 
-          <div class="col-1 text-right"> 
-           <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
-          </div> 
-         </div> </li> 
-       </div> 
-      </div> 
-     </div> 
-     <div class="col-sm-12  h-auto" data-cluecumber-item="card"> 
-      <div class="card h-100"> 
-       <div class="card-header">
-        Steps
-       </div> 
-       <div class="card-body"> 
-        <li class="list-group-item"> 
-         <div class="row row_passed"> 
-          <div class="col-1 text-left">
-           1.
-          </div> 
-          <div class="col-8 text-left"> 
-           <span data-toggle="tooltip" title="HomePageStepDefinitions.navigateToHomePage()"> Given User has navigated to Home Page </span> 
-          </div> 
-          <div class="col-2 text-left small">
-            0m 00s 416ms 
-          </div> 
-          <div class="col-1 text-right"> 
-           <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
-          </div> 
-         </div> 
-         <div class="row row_passed"> 
-          <div class="col-1 text-left">
-           2.
-          </div> 
-          <div class="col-8 text-left"> 
-           <span data-toggle="tooltip" title="HomePageStepDefinitions.login()"> When User logs in </span> 
-          </div> 
-          <div class="col-2 text-left small">
-            0m 01s 103ms 
+            0m 00s 119ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
@@ -388,70 +336,24 @@
          </div> 
          <div class="row row_failed"> 
           <div class="col-1 text-left">
-           3.
+           4.
           </div> 
           <div class="col-8 text-left"> 
-           <span data-toggle="tooltip" title="HomePageStepDefinitions.verifyUserIsLoggedIn()"> Then they are logged in </span> 
+           <i>Hooks.setUserLogin()</i> 
           </div> 
           <div class="col-2 text-left small">
-            0m 02s 604ms 
+            0m 00s 171ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 
           </div> 
           <div class="row w-100 p-3 m-0 scenarioErrorMessage"> 
            <div class="w-100 text-left border border-danger"> 
-            <pre class="text-danger small p-2">Element not found {a#profile}
-Expected: exist
-Screenshot: file:/home/travis/build/extreme-startup/TAF/build/reports/tests/1555077058300.0.png
-Page source: file:/home/travis/build/extreme-startup/TAF/build/reports/tests/1555077058300.0.html
-Timeout: 2 s.
-Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"a#profile"}
-	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:37)
-	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:100)
-	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:131)
-	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:65)
-	at com.sun.proxy.$Proxy27.getAttribute(Unknown Source)
-	at automation.examples.site.pages.home.HomePageImpl.getProfileEmail(HomePageImpl.java:62)
-	at automation.examples.storefront.business.HomePageStepDefinitions.lambda$verifyUserIsLoggedIn$0(HomePageStepDefinitions.java:62)
-	at org.assertj.core.api.SoftAssertions.assertSoftly(SoftAssertions.java:161)
-	at automation.examples.storefront.business.HomePageStepDefinitions.verifyUserIsLoggedIn(HomePageStepDefinitions.java:61)
-	at ✽.they are logged in(/home/travis/build/extreme-startup/TAF/src/test/resources/features/storefront/Login.feature:7)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"a#profile"}
-  (Session info: chrome=72.0.3626.121)
-  (Driver info: chromedriver=2.46.628388 (4a34a70827ac54148e092aafb70504c4ea7ae926),platform=Linux 4.15.0-1029-gcp x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: <a href="https://www.seleniumhq.org/exceptions/no_such_element.html" target="_blank">https://www.seleniumhq.org/exceptions/no_such_element.html</a>
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'travis-job-b9052fd6-8328-4071-9cf0-2793d669cd3c', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-101-generic', java.version: '1.8.0_151'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628388 (4a34a70827ac54..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:46819}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true, webdriver.remote.sessionid: 138b09bf7742ccab56ed7d00bc0...}
-Session ID: 138b09bf7742ccab56ed7d00bc0e5a21
-*** Element info: {Using=css selector, value=a#profile}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:28)
-	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:74)
-	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:102)
-	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:65)
-	at com.sun.proxy.$Proxy27.getAttribute(Unknown Source)
-	at automation.examples.site.pages.home.HomePageImpl.getProfileEmail(HomePageImpl.java:62)
-	at automation.examples.storefront.business.HomePageStepDefinitions.lambda$verifyUserIsLoggedIn$0(HomePageStepDefinitions.java:62)
-	at org.assertj.core.api.SoftAssertions.assertSoftly(SoftAssertions.java:161)
-	at automation.examples.storefront.business.HomePageStepDefinitions.verifyUserIsLoggedIn(HomePageStepDefinitions.java:61)
+            <pre class="text-danger small p-2">java.lang.NullPointerException
+	at automation.examples.api.resources.AllUsers.get(AllUsers.java:13)
+	at automation.examples.framework.spring.CustomerHelper.getRandomRegisteredEmail(CustomerHelper.java:30)
+	at automation.examples.api.common.CommonSteps.setUserLogin(CommonSteps.java:45)
+	at automation.examples.storefront.business.Hooks.setUserLogin(Hooks.java:52)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -459,12 +361,11 @@ Session ID: 138b09bf7742ccab56ed7d00bc0e5a21
 	at cucumber.runtime.Utils$1.call(Utils.java:26)
 	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
 	at cucumber.runtime.Utils.invoke(Utils.java:20)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:49)
-	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
+	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
+	at cucumber.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:16)
 	at cucumber.runner.TestStep.executeStep(TestStep.java:63)
 	at cucumber.runner.TestStep.run(TestStep.java:49)
-	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
-	at cucumber.runner.TestCase.run(TestCase.java:44)
+	at cucumber.runner.TestCase.run(TestCase.java:40)
 	at cucumber.runner.Runner.runPickle(Runner.java:40)
 	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:146)
 	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
@@ -496,6 +397,100 @@ Session ID: 138b09bf7742ccab56ed7d00bc0e5a21
 </pre> 
            </div> 
           </div> 
+         </div> 
+         <div class="row row_passed"> 
+          <div class="col-1 text-left">
+           5.
+          </div> 
+          <div class="col-8 text-left"> 
+           <i>Hooks.setupBaseURL()</i> 
+          </div> 
+          <div class="col-2 text-left small">
+            0m 00s 000ms 
+          </div> 
+          <div class="col-1 text-right"> 
+           <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
+          </div> 
+         </div> 
+         <div class="row row_passed"> 
+          <div class="col-1 text-left">
+           6.
+          </div> 
+          <div class="col-8 text-left"> 
+           <i>Hooks.maximizeBrowser()</i> 
+          </div> 
+          <div class="col-2 text-left small">
+            0m 00s 000ms 
+          </div> 
+          <div class="col-1 text-right"> 
+           <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
+          </div> 
+         </div> </li> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-sm-12  h-auto" data-cluecumber-item="card"> 
+      <div class="card h-100"> 
+       <div class="card-header">
+        Steps
+       </div> 
+       <div class="card-body"> 
+        <li class="list-group-item"> 
+         <div class="row row_skipped"> 
+          <div class="col-1 text-left">
+           1.
+          </div> 
+          <div class="col-8 text-left"> 
+           <span data-toggle="tooltip" title="HomePageStepDefinitions.navigateToLandingPageAndLogin()"> Given logged in User </span> 
+          </div> 
+          <div class="col-2 text-left small">
+            0m 00s 000ms 
+          </div> 
+          <div class="col-1 text-right"> 
+           <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> 
+          </div> 
+         </div> 
+         <div class="row row_skipped"> 
+          <div class="col-1 text-left">
+           2.
+          </div> 
+          <div class="col-8 text-left"> 
+           <span data-toggle="tooltip" title="HomePageStepDefinitions.addNewTraining()"> And User has added new training </span> 
+          </div> 
+          <div class="col-2 text-left small">
+            0m 00s 000ms 
+          </div> 
+          <div class="col-1 text-right"> 
+           <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> 
+          </div> 
+         </div> 
+         <div class="row row_skipped"> 
+          <div class="col-1 text-left">
+           3.
+          </div> 
+          <div class="col-8 text-left"> 
+           <span data-toggle="tooltip" title="HomePageStepDefinitions.deleteTraining()"> When User deletes the training </span> 
+          </div> 
+          <div class="col-2 text-left small">
+            0m 00s 000ms 
+          </div> 
+          <div class="col-1 text-right"> 
+           <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> 
+          </div> 
+         </div> 
+         <div class="row row_skipped"> 
+          <div class="col-1 text-left">
+           4.
+          </div> 
+          <div class="col-8 text-left"> 
+           <span data-toggle="tooltip" title="HomePageStepDefinitions.verifyAddedTrainingIsNotDisplayed()"> Then training is not displayed on Home Page in the Training section </span> 
+          </div> 
+          <div class="col-2 text-left small">
+            0m 00s 000ms 
+          </div> 
+          <div class="col-1 text-right"> 
+           <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> 
+          </div> 
          </div> </li> 
        </div> 
       </div> 
@@ -505,7 +500,7 @@ Session ID: 138b09bf7742ccab56ed7d00bc0e5a21
   </main> 
   <footer class="footer navbar-dark bg-dark"> 
    <div class="container-fluid"> 
-    <span>Cluecumber Report Plugin version 1.7.2 - 2019/04/12 13:51:12.</span> 
+    <span>Cluecumber Report Plugin version 1.7.2 - 2019/04/22 09:44:57.</span> 
    </div> 
   </footer>   
  </body>

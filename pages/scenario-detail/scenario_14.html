@@ -73,14 +73,18 @@
       "Before 6",
       "Step 1",
       "Step 2",
-      "Step 3"
+      "Step 3",
+      "Step 4",
+      "Step 5"
     ],
     "datasets": [
       {
         "data": [
-          1,
           0,
-          115,
+          0,
+          122,
+          0,
+          0,
           0,
           0,
           0,
@@ -89,6 +93,8 @@
           0
         ],
         "backgroundColor": [
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
@@ -107,7 +113,9 @@
           0,
           0,
           0,
-          5,
+          2,
+          0,
+          0,
           0,
           0,
           0,
@@ -115,6 +123,8 @@
           0
         ],
         "backgroundColor": [
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
@@ -138,9 +148,13 @@
           0,
           0,
           0,
+          0,
+          0,
           0
         ],
         "backgroundColor": [
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
@@ -244,8 +258,8 @@
   <main role="main" class="container"> 
    <div class="cluecumber-template"> 
     <div class="pb-2 mt-4 mb-2 border-bottom"> 
-     <h5><a href="pages/feature-scenarios/feature_2.html">Create Training</a></h5> 
-     <h3>Create training</h3> 
+     <h5><a href="pages/feature-scenarios/feature_3.html">Question</a></h5> 
+     <h3>Discard question creation</h3> 
     </div> 
     <div class="row"> 
      <div class="col-sm-8  h-auto" data-cluecumber-item="card"> 
@@ -267,10 +281,10 @@
        </div> 
        <div class="card-body"> 
         <ul class="list-group list-group-flush"> 
-         <li class="list-group-item">3 Step(s)</li> 
-         <li class="list-group-item"> 0 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 0 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 3 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> </li> 
-         <li class="list-group-item">Duration: 0m 00s 122ms</li> 
-         <li class="list-group-item"> <a href="pages/tag-scenarios/tag_regression.html">@regression</a>, <a href="pages/tag-scenarios/tag_type:sunny.html">@type:sunny</a>, <a href="pages/tag-scenarios/tag_admin.html">@admin</a> </li> 
+         <li class="list-group-item">5 Step(s)</li> 
+         <li class="list-group-item"> 0 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 0 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 5 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> </li> 
+         <li class="list-group-item">Duration: 0m 00s 126ms</li> 
+         <li class="list-group-item"> <a href="pages/tag-scenarios/tag_regression.html">@regression</a>, <a href="pages/tag-scenarios/tag_type:rainy.html">@type:rainy</a>, <a href="pages/tag-scenarios/tag_admin.html">@admin</a> </li> 
         </ul> 
         <button class="btn btn-outline-secondary btn-block collapsed" type="button" data-toggle="collapse" aria-expanded="true" data-cluecumber-item="before-after-hooks-button" data-target=".scenarioHook">Before/After Hooks </button> 
        </div> 
@@ -293,7 +307,7 @@
            <i>Hooks.setupBrowser()</i> 
           </div> 
           <div class="col-2 text-left small">
-            0m 00s 001ms 
+            0m 00s 000ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
@@ -321,7 +335,7 @@
            <i>Hooks.clearCookies()</i> 
           </div> 
           <div class="col-2 text-left small">
-            0m 00s 115ms 
+            0m 00s 122ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"><span style="display:none">passed</span></i> 
@@ -335,7 +349,7 @@
            <i>Hooks.setUserLogin()</i> 
           </div> 
           <div class="col-2 text-left small">
-            0m 00s 005ms 
+            0m 00s 002ms 
           </div> 
           <div class="col-1 text-right"> 
            <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"><span style="display:none">failed</span></i> 
@@ -448,7 +462,7 @@
            2.
           </div> 
           <div class="col-8 text-left"> 
-           <span data-toggle="tooltip" title="HomePageStepDefinitions.addNewTraining()"> When User adds new training </span> 
+           <span data-toggle="tooltip" title="HomePageStepDefinitions.openCompetition(String)"> Given User has opened '<strong>Training for Automation test</strong>' training </span> 
           </div> 
           <div class="col-2 text-left small">
             0m 00s 000ms 
@@ -462,7 +476,35 @@
            3.
           </div> 
           <div class="col-8 text-left"> 
-           <span data-toggle="tooltip" title="HomePageStepDefinitions.verifyAddedTrainingIsDisplayed()"> Then added training is displayed on Home Page in the Training section </span> 
+           <span data-toggle="tooltip" title="TrainingPageDefinitionSteps.provideStaticQuestion()"> And has provided static question </span> 
+          </div> 
+          <div class="col-2 text-left small">
+            0m 00s 000ms 
+          </div> 
+          <div class="col-1 text-right"> 
+           <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> 
+          </div> 
+         </div> 
+         <div class="row row_skipped"> 
+          <div class="col-1 text-left">
+           4.
+          </div> 
+          <div class="col-8 text-left"> 
+           <span data-toggle="tooltip" title="TrainingPageDefinitionSteps.cancelQuestion()"> When User cancel question creation </span> 
+          </div> 
+          <div class="col-2 text-left small">
+            0m 00s 000ms 
+          </div> 
+          <div class="col-1 text-right"> 
+           <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"><span style="display:none">skipped</span></i> 
+          </div> 
+         </div> 
+         <div class="row row_skipped"> 
+          <div class="col-1 text-left">
+           5.
+          </div> 
+          <div class="col-8 text-left"> 
+           <span data-toggle="tooltip" title="TrainingPageDefinitionSteps.verifyQuestionIsNotPresent()"> Then question is not present on Training Page </span> 
           </div> 
           <div class="col-2 text-left small">
             0m 00s 000ms 
