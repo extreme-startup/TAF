@@ -11,7 +11,7 @@ function run_tests {
         echo "Do you want to use grid? Type [yes, no]"
         read -p 'use grid (yes, no): ' grid
         ./mvnw clean install
-        ./mvnw -P $type,$suite,generate generate-test-sources
+        ./mvnw -P $type,$suite generate-test-sources
         if [ $grid == 'yes' ]
         then
         ./mvnw -P run integration-test -Denv=$env -Dselenide.remote="http://35.234.68.105:4444/wd/hub"
