@@ -3,7 +3,8 @@ package automation.examples.api.resources;
 import io.restassured.response.Response;
 import org.springframework.stereotype.Service;
 
-import static automation.examples.api.RestAssuredContext.request;
+import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.requestSpecification;
 
 @Service
 public class Customers {
@@ -11,7 +12,7 @@ public class Customers {
     private static final String ENDPOINT = "/customers";
 
     public Response get() {
-        return request.get(ENDPOINT);
+        return given().spec(requestSpecification).get(ENDPOINT);
     }
 
 }

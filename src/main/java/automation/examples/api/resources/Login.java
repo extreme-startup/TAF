@@ -18,7 +18,11 @@ public class Login {
 
     public void setLoginCookie(final Response response) {
         final String session = "connect.sid";
-        request.cookie(session, response.getCookie(session));
+        if (response == null || !response.getCookies().containsKey(session)) {
+            throw new IllegalStateException("Login response doesn't contain any cookie");
+        } else {
+            requestSpecification.cookie(session, response.getCookie(session));
+        }
     }
 
 }

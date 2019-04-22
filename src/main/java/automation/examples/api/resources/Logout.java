@@ -3,7 +3,8 @@ package automation.examples.api.resources;
 import io.restassured.response.Response;
 import org.springframework.stereotype.Component;
 
-import static automation.examples.api.RestAssuredContext.request;
+import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.requestSpecification;
 
 @Component
 public class Logout {
@@ -11,7 +12,7 @@ public class Logout {
     private static final String ENDPOINT = "/auth/logout/";
 
     public Response get() {
-        return request.get(ENDPOINT);
+        return given().spec(requestSpecification).get(ENDPOINT);
     }
 
 }

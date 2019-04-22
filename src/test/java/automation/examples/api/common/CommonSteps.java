@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 
-import static automation.examples.api.RestAssuredContext.request;
 import static automation.examples.framework.spring.CustomerHelper.userLogin;
 import static io.restassured.RestAssured.requestSpecification;
 import static io.restassured.http.ContentType.JSON;
@@ -41,7 +40,7 @@ public class CommonSteps {
                 .build();
 
         if (valueOf(apiLogger)) {
-            request.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
+            requestSpecification.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
         }
     }
 
