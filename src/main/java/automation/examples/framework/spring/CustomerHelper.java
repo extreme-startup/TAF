@@ -32,4 +32,10 @@ public class CustomerHelper {
         return getRandomFromCollection(registeredEmails);
     }
 
+    public String getRandomUserId() {
+        final List<UserDTO> allUsersDTO = asList(allUsers.get().as(UserDTO[].class));
+        final List<String> registeredEmails = allUsersDTO.stream().map(UserDTO::getId).collect(Collectors.toList());
+        return getRandomFromCollection(registeredEmails);
+    }
+
 }
