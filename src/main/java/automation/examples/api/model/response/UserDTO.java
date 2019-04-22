@@ -1,25 +1,21 @@
 package automation.examples.api.model.response;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor(force = true)
+@AllArgsConstructor
+@EqualsAndHashCode
 public class UserDTO {
 
     private String id;
     private String email;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(final String id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(final String email) {
-        this.email = email;
-    }
 
 }
