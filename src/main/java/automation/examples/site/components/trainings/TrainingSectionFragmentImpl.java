@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.codeborne.selenide.Condition.disappear;
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.$$;
@@ -24,7 +25,7 @@ public class TrainingSectionFragmentImpl implements TrainingSectionFragment {
     ApplicationContext applicationContext;
 
     public SelenideElement getAddNewTrainingButton() {
-        return $x(".//div[(contains(text(), \"Add new training\"))]");
+        return $x(".//div[(contains(text(), 'Add new training'))]");
     }
 
     private ElementsCollection getTrainingFragmentAsSelenideElement(){
@@ -64,6 +65,11 @@ public class TrainingSectionFragmentImpl implements TrainingSectionFragment {
     @Override
     public void waitForTrainingToAppear(final String trainingName) {
         $x(format(".//h5[contains(text(), \"%s\")]", trainingName)).shouldBe(exist);
+    }
+
+    @Override
+    public void waitForTrainingToDisappear(final String trainingName) {
+        $x(format(".//h5[contains(text(), \"%s\")]", trainingName)).shouldBe(disappear);
     }
 
     @Override

@@ -28,12 +28,12 @@ public class TrainingFragmentImpl implements TrainingFragment {
 
     @Override
     public SelenideElement getDeleteButton() {
-        return element.$x(".//button[(contains(@class, \"error\"))]");
+        return element.$x(".//button[(contains(@class, 'error'))]");
     }
 
     @Override
     public SelenideElement getEditButton() {
-        return element.$x(".//button[(contains(text(), \"Edit\"))]");
+        return element.$x(".//button[(contains(text(), 'Edit'))]");
     }
 
     @Override
