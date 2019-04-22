@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.springframework.stereotype.Component;
 
 import static com.codeborne.selenide.Selenide.$;
-import static org.apache.commons.lang3.StringUtils.EMPTY;
+import static com.codeborne.selenide.Selenide.$x;
 
 
 @Component
@@ -60,17 +60,17 @@ public class QuestionFragmentImpl implements QuestionFragment {
 
     @Override
     public boolean isQuestionHighlighted() {
-        return isElementHighlighted(getQuestionInput(), "formInputError");
+        return isElementHighlighted(getQuestionHighlightedElement());
     }
 
     @Override
     public boolean isAnswerHighlighted() {
-        return isElementHighlighted(getAnswerInput(), "formTextAreaError");
+        return isElementHighlighted(getAnswerHighlightedElement());
     }
 
     @Override
     public boolean isValueHighlighted() {
-        return isElementHighlighted(getValueInput(), "formInputError");
+        return isElementHighlighted(getValueHighlightedElement());
     }
 
     @Override
@@ -95,6 +95,10 @@ public class QuestionFragmentImpl implements QuestionFragment {
         return $("input#question-text-input");
     }
 
+    private SelenideElement getQuestionHighlightedElement() {
+        return $x(".//div[contains(@class,'v-input ')][.//input[@id='question-text-input']]");
+    }
+
     private SelenideElement getQuestionErrorMessage() {
         return $("span#question-text-error");
     }
@@ -103,12 +107,20 @@ public class QuestionFragmentImpl implements QuestionFragment {
         return $("textarea#question-answer-input");
     }
 
+    private SelenideElement getAnswerHighlightedElement() {
+        return $x(".//div[contains(@class,'v-input ')][.//textarea[@id='question-answer-input']]");
+    }
+
     private SelenideElement getAnswerErrorMessage() {
         return $("span#question-answer-error");
     }
 
     private SelenideElement getValueInput() {
         return $("input#question-value-input");
+    }
+
+    private SelenideElement getValueHighlightedElement() {
+        return $x(".//div[contains(@class,'v-input ')][.//input[@id='question-value-input']]");
     }
 
     private SelenideElement getValueErrorMessage() {
@@ -123,8 +135,8 @@ public class QuestionFragmentImpl implements QuestionFragment {
         return $("button#question-cancel-button");
     }
 
-    private boolean isElementHighlighted(final SelenideElement element, final String errorClass) {
-        return element.getAttribute("class").contains(errorClass);
+    private boolean isElementHighlighted(final SelenideElement element) {
+        return element.getAttribute("class").contains("error--text");
     }
 
 }

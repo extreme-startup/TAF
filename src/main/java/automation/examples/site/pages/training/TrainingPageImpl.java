@@ -54,7 +54,7 @@ public class TrainingPageImpl implements TrainingPage {
 
     @Override
     public void waitUntilQuestionShouldBeAppear(final String question) {
-        getDeleteButton(question).shouldBe(appear);
+        getAddedQuestions().findBy(text(question)).shouldBe(appear);
     }
 
     @Override
@@ -73,22 +73,22 @@ public class TrainingPageImpl implements TrainingPage {
     }
 
     private ElementsCollection getAddedQuestions() {
-        return $$(By.xpath(".//tbody/tr"));
+        return $$(By.xpath(".//tbody/tr/td[1]"));
     }
 
     private SelenideElement getAddNewQuestionButton() {
-        return $("button.lfvxis");
+        return $("button.info");
     }
 
     private SelenideElement getDeleteButton(final String question) {
         final String locator =
-                ".//tr[@class='ikBKhu'][.//td[normalize-space(text())='%s']]//button[contains(@class,'error')]";
+                ".//tr[.//td[text()='%s']]//button[@id='question-delete-btn']";
         return $(By.xpath(String.format(locator, question)));
     }
 
     private SelenideElement getEditButton(final String question) {
         final String locator =
-                ".//tr[@class='ikBKhu'][.//td[normalize-space(text())='%s']]//button[not(contains(@class,'error'))]";
+                ".//tr[.//td[text()='%s']]//button[@id='question-edit-btn']";
         return $(By.xpath(String.format(locator, question)));
     }
 
