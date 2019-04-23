@@ -36,11 +36,11 @@ public class AddNewTrainingPopUpImpl implements AddNewTrainingPopUp {
     }
 
     private SelenideElement getSaveButton() {
-        return $x(".//button[div[(contains(text(), \"Save\"))]]");
+        return $x(".//button[div[(contains(text(), 'Save'))]]");
     }
 
     private SelenideElement getCancelButton() {
-        return $x(".//button[div[(contains(text(), \"Cancel\"))]]");
+        return $x(".//button[div[(contains(text(), 'Cancel'))]]");
     }
 
     @Override

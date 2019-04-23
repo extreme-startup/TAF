@@ -25,4 +25,6 @@ public interface TrainingSectionFragment extends Fragment {
 
     void waitForTrainingToAppear(String trainingName);
 
+    void waitForTrainingToDisappear(String trainingName);
+
 }

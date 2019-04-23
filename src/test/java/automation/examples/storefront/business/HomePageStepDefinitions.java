@@ -1,5 +1,6 @@
 package automation.examples.storefront.business;
 
+import automation.examples.site.components.trainings.TrainingFragment;
 import automation.examples.site.pages.home.HomePage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -7,13 +8,18 @@ import cucumber.api.java.en.When;
 import org.assertj.core.api.SoftAssertions;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 import static automation.examples.framework.spring.CustomerHelper.userLogin;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
 public class HomePageStepDefinitions extends CucumberDefinitionSteps {
 
     private String trainingName;
     private String trainingDescription;
+    private List<TrainingFragment> trainingsAmount;
 
     @Autowired
     private HomePage homePage;
@@ -53,8 +59,10 @@ public class HomePageStepDefinitions extends CucumberDefinitionSteps {
 
     @When("^User deletes the training$")
     public void deleteTraining() {
+        trainingsAmount = homePage.getTrainingSectionFragment().getTrainings();
         homePage.getTrainingSectionFragment().deleteTrainingByName(trainingName);
         homePage.getConfirmDeletionPopUp().confirmDeletion();
+        homePage.getTrainingSectionFragment().waitForTrainingToDisappear(trainingName);
     }
 
     @When("^User cancels deletion of the training$")
@@ -126,8 +134,8 @@ public class HomePageStepDefinitions extends CucumberDefinitionSteps {
 
     @Then("^training is not displayed on Home Page in the Training section$")
     public void verifyAddedTrainingIsNotDisplayed() {
-        assertThat(homePage.getTrainingSectionFragment().isAddedTrainingDisplayed(trainingName, trainingDescription))
-                .withFailMessage("Deleted training is displayed " + trainingName).isFalse();
+        assertThat(homePage.getTrainingSectionFragment().getTrainings(),
+                hasSize(trainingsAmount.size() - 1));
     }
 
 }
