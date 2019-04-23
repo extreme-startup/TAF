@@ -5,11 +5,11 @@ import automation.examples.api.resources.AllUsers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static automation.examples.framework.spring.utils.RandomUtils.getRandomFromCollection;
+import static automation.examples.framework.spring.utils.RandomUtils.getTimeStamp;
 import static java.util.Arrays.asList;
 
 @Component
@@ -22,8 +22,7 @@ public class CustomerHelper {
 
     public static String getNewEmail() {
         userLogin = "John.Doe@mail.com";
-        long timestamp = new Date().getTime();
-        return userLogin.replace("@", String.format("%d@", timestamp));
+        return userLogin.replace("@", String.format("%d@", getTimeStamp()));
     }
 
     public String getRandomRegisteredEmail() {
