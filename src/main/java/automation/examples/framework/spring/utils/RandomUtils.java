@@ -3,6 +3,7 @@ package automation.examples.framework.spring.utils;
 import java.security.SecureRandom;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 import java.util.Optional;
 
 public final class RandomUtils {
@@ -19,6 +20,10 @@ public final class RandomUtils {
         final int index = new SecureRandom().nextInt(size);
         final Optional<T> result = notNullCollection.stream().skip(index).limit(1).findAny();
         return result.orElseThrow(() -> new IllegalStateException("Can not get element from collection"));
+    }
+
+    public static long getTimeStamp(){
+        return new Date().getTime();
     }
 
 }
