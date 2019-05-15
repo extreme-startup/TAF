@@ -2,11 +2,14 @@ package automation.examples.site.pages.training;
 
 import automation.examples.site.components.question.DeleteQuestionFragment;
 import automation.examples.site.components.question.QuestionFragment;
+import automation.examples.site.components.session.SessionTabFragment;
 import automation.examples.site.pages.Page;
 
 public interface TrainingPage extends Page {
 
     QuestionFragment getQuestionFragment();
+
+    SessionTabFragment getSessionTabFragment();
 
     DeleteQuestionFragment getDeleteQuestionFragment();
 
@@ -23,5 +26,7 @@ public interface TrainingPage extends Page {
     void waitUntilQuestionShouldBeDisappear(String question);
 
     void waitUntilQuestionShouldBeAppear(String question);
+
+    void switchToSessionTab();
 
 }
