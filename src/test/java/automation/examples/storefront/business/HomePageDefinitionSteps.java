@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
-public class HomePageStepDefinitions extends CucumberDefinitionSteps {
+public class HomePageDefinitionSteps extends CucumberDefinitionSteps {
 
     private String trainingName;
     private String trainingDescription;
@@ -50,6 +50,11 @@ public class HomePageStepDefinitions extends CucumberDefinitionSteps {
         homePage.getAddNewTrainingPopUp().provideDetailsForTrainingCreation(trainingName, trainingDescription);
         homePage.getAddNewTrainingPopUp().saveTrainingCreation();
         homePage.getTrainingSectionFragment().waitForTrainingToAppear(trainingName);
+    }
+
+    @Given("^(?:User |)has navigated to training page$")
+    public void switchToTrainingPage() {
+        homePage.getTrainingSectionFragment().clickOnTrainingName(trainingName);
     }
 
     @When("^User clicks on Add to Training$")

@@ -2,13 +2,17 @@ package automation.examples.site.pages.training;
 
 import automation.examples.site.components.question.DeleteQuestionFragment;
 import automation.examples.site.components.question.QuestionFragment;
+import automation.examples.site.components.session.SessionTabFragment;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.appear;
+import static com.codeborne.selenide.Condition.disappear;
+import static com.codeborne.selenide.Condition.enabled;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
@@ -18,6 +22,9 @@ public class TrainingPageImpl implements TrainingPage {
 
     @Autowired
     private QuestionFragment questionFragment;
+
+    @Autowired
+    private SessionTabFragment sessionTabFragment;
 
     @Autowired
     private DeleteQuestionFragment deleteQuestionFragment;
@@ -30,6 +37,11 @@ public class TrainingPageImpl implements TrainingPage {
     @Override
     public QuestionFragment getQuestionFragment() {
         return questionFragment;
+    }
+
+    @Override
+    public SessionTabFragment getSessionTabFragment() {
+        return sessionTabFragment;
     }
 
     @Override
@@ -70,6 +82,11 @@ public class TrainingPageImpl implements TrainingPage {
     @Override
     public boolean isAddedQuestionExist(final String question) {
         return getAddedQuestions().findBy(text(question)).exists();
+    }
+
+    @Override
+    public void switchToSessionTab() {
+        $("a[href='#Sessions']").shouldBe(enabled).click();
     }
 
     private ElementsCollection getAddedQuestions() {

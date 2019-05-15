@@ -1,5 +1,6 @@
 package automation.examples.storefront.business;
 
+import automation.examples.site.pages.session.SessionPage;
 import automation.examples.site.pages.training.TrainingPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -20,6 +21,9 @@ public class TrainingPageDefinitionSteps extends CucumberDefinitionSteps {
     @Autowired
     private TrainingPage trainingPage;
 
+    @Autowired
+    private SessionPage sessionPage;
+
     @Given("^has provided static question$")
     public void provideStaticQuestion() {
         question = String.format("Simple question %s", getTimestamp());
@@ -36,6 +40,13 @@ public class TrainingPageDefinitionSteps extends CucumberDefinitionSteps {
         trainingPage.getQuestionFragment().provideRequiredDetailsForQuestion(question, answer, value);
         trainingPage.getQuestionFragment().saveQuestion();
         trainingPage.waitUntilQuestionShouldBeAppear(question);
+    }
+
+    @Given("^(?:User |)(?:adds|has added) new session$")
+    public void addNewSession() {
+        trainingPage.switchToSessionTab();
+        trainingPage.getSessionTabFragment().addNewSession();
+        sessionPage.waitForSessionIsCreated();
     }
 
     @When("^User tries add question with empty fileds$")
@@ -132,6 +143,5 @@ public class TrainingPageDefinitionSteps extends CucumberDefinitionSteps {
                     .withFailMessage("Question value field is not highlighted").isTrue();
         });
     }
-
 
 }
